@@ -63,4 +63,4 @@ $$
 
 Meow
 
-{% asset_img Meowww.jpg %}
+![](./Meowww.jpg)
