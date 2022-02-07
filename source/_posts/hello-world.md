@@ -2,6 +2,7 @@
 title: The Start of Everything
 date: 2022-2-7
 tag: meow
+mathjax: true
 ---
 
 ## Meow

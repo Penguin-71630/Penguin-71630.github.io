@@ -105,7 +105,3 @@ deploy:
   type: git
   repo: https://github.com/Penguin-71630/Penguin-71630.github.io.git
   branch: master
-
-markdown:
-  plugins:
-    - hexo-math
