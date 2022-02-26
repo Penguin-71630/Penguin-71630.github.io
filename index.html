@@ -177,7 +177,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022.02.26 22:44:25 / Modified: 23:17:54" itemprop="dateCreated datePublished" datetime="2022-02-26T22:44:25+08:00">2022.02.26</time>
+              <time title="Created: 2022.02.26 22:44:25 / Modified: 23:44:43" itemprop="dateCreated datePublished" datetime="2022-02-26T22:44:25+08:00">2022.02.26</time>
             </span>
 
           
@@ -202,7 +202,13 @@
 <p>$1 \leq N \leq 2^{40}$</p>
 <p>$L \leq R \leq N$</p>
 <p>$R - L \leq 3 \times 10^5$</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>這題是 Wiwi 放在讀書會拿來講解的題目，但我沒有聽不想被暴雷，結果想了超久才想到這題的作法 zzz。</p>
+<p>看到 $2^40$ 又是數學題，明顯就是一題數論分塊題。</p>
+<p>首先這題有個觀察，如果 $i$ 是邊緣人的話，那麼所有 $&gt;i$ 的 $j$ 也會是邊緣人。</p>
+<p>接著計算答案的方式可以由 $x$ 的角度切入，枚舉 $x \in [1, N]$ 然後算每個 $x$ 會貢獻到 $[L, R]$ 當中的哪些人的答案（也就是會讓誰成為邊緣人）。但這樣複雜度會炸掉，所以我們考慮分塊。</p>
+<p>對於 $\leq \lfloor sqrt(N) \rfloor$ 的 $x$，可以直接枚舉每個這樣的 $x$ 然後簡單地計算。</p>
+<p>設 $k &#x3D; x \lfloor \frac{N}{x} \rfloor$，$x$ 會讓編號 $\geq k+1$ 的人都成為邊緣人，但詢問只有問 $L \sim R$ 的人，所以只要把 $max(k+1, L) \sim R$ 的人的答案全部 $+1$（當然，$k+1$ 如果 $&gt;R$ 那就什麼事情都不用做）。</p>
+
       
     </div>
 
