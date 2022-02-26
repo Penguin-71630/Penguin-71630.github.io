@@ -28,7 +28,7 @@
 <meta property="og:description" content="倒數 15 天來寫日記好了，記錄每天做了些什麼才不會莫名一直頹下去還沒有自覺 &#x3D;w&#x3D; 札記這幾個禮拜都嚴重睡眠不足，連 4 個睡眠週期都睡不到 結果今天直接睡到下午一點多，根本沒做什麼事 &#x3D; &#x3D; 寫了一點學校的功課然後只戳了一題，今天有點廢 &#x3D;w&#x3D; 2020 NPSC 初賽 pA — 邊緣人今天戳了這題，覺得滿有趣的，來寫一下解法。 題目">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-26T14:44:25.000Z">
-<meta property="article:modified_time" content="2022-02-26T16:23:20.528Z">
+<meta property="article:modified_time" content="2022-02-26T16:23:44.166Z">
 <meta property="article:author" content="Gino">
 <meta property="article:tag" content="TOI">
 <meta name="twitter:card" content="summary">
@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022.02.27 00:23:20" itemprop="dateModified" datetime="2022-02-27T00:23:20+08:00">2022.02.27</time>
+                <time title="Modified: 2022.02.27 00:23:44" itemprop="dateModified" datetime="2022-02-27T00:23:44+08:00">2022.02.27</time>
               </span>
 
           
@@ -226,7 +226,7 @@
 <p>設 $k &#x3D; x \lfloor \frac{N}{x} \rfloor$，$x$ 會讓編號大於等於 $k+1$ 的人都成為邊緣人，但詢問只有問 $L \sim R$ 的人，所以只要把 $max(k+1, L) \sim R$ 的人的答案全部 $+1$（當然，$k+1$ 如果 $&gt;R$ 那就什麼事情都不用做）。</p>
 <p>接下來處理 $&gt; \lfloor \sqrt{N} \rfloor$ 的 $x$，這時候我們換另一個角度算答案，從原本枚舉一組的大小 $x$，換成枚舉組的數量 $t$，$t \in [1, O(\sqrt{N})]$。</p>
 <p>當一共分成 $t$ 組時，考慮一組的大小 $x$ 的範圍，可以用高斯符號的不等式性質推出：</p>
-<p>$$<br>\frac{N}{x}-1 &lt; \lfloor \frac{N}{x} \rfloor \leq \frac{N}{x}<br>\frac{N}{x}-1 &lt; t \leq \frac{N}{x}<br>\frac{N}{t+1} &lt; x \leq \frac{N}{t}<br>x \in [\lfloor \frac{N}{t+1}+1 \rfloor, \lfloor \frac{N}{t} \rfloor]<br>$$</p>
+<p>$$<br>\frac{N}{x}-1 &lt; \lfloor \frac{N}{x} \rfloor \leq \frac{N}{x} \<br>\frac{N}{x}-1 &lt; t \leq \frac{N}{x} \<br>\frac{N}{t+1} &lt; x \leq \frac{N}{t} \<br>x \in [\lfloor \frac{N}{t+1}+1 \rfloor, \lfloor \frac{N}{t} \rfloor] \<br>$$</p>
 <p>姑且設 $x \in [l, r]$。</p>
 <p>然後考慮這個區間每個 $x$ 會讓某個人成為邊緣人的「開始點」，會發現開始點就是 $tx + 1$，於是把 $max(tx + 1, L) \sim R$ 的人的答案 $+1$，於是對每個 $x \in [l, r]$ 做一樣的事情，起始點分別是 $tl + 1, t(l+1) + 1, t(l+2) + 1, … tr+1$ 然後做區間加值。</p>
 <p>最後還有個優化，由於 $t$ 很小的時候，起始點的數量會太多，複雜度還是會炸掉。然而觀察發現這些起始點大部分都會小於 $L$，所以我們可以直接先快速算小於 $L$ 的起始點有幾個，一樣要推個不等式但這裡我就不細寫，總之可以 $O(1)$ 算出。然後對於 $[L, R]$ 內起始點我們便暴力掃過它們然後做區間加值。</p>
