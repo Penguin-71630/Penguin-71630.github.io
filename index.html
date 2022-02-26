@@ -183,7 +183,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022.02.27 00:18:26" itemprop="dateModified" datetime="2022-02-27T00:18:26+08:00">2022.02.27</time>
+                <time title="Modified: 2022.02.27 00:20:19" itemprop="dateModified" datetime="2022-02-27T00:20:19+08:00">2022.02.27</time>
               </span>
 
           
@@ -223,9 +223,9 @@
 <p>設 $k &#x3D; x \lfloor \frac{N}{x} \rfloor$，$x$ 會讓編號大於等於 $k+1$ 的人都成為邊緣人，但詢問只有問 $L \sim R$ 的人，所以只要把 $max(k+1, L) \sim R$ 的人的答案全部 $+1$（當然，$k+1$ 如果 $&gt;R$ 那就什麼事情都不用做）。</p>
 <p>接下來處理 $&gt; \lfloor \sqrt{N} \rfloor$ 的 $x$，這時候我們換另一個角度算答案，從原本枚舉一組的大小 $x$，換成枚舉組的數量 $t$，$t \in [1, O(\sqrt{N})]$。</p>
 <p>當一共分成 $t$ 組時，考慮一組的大小 $x$ 的範圍，可以用高斯符號的不等式性質推出：</p>
-<p>$$<br>\frac{N}{x}-1 &lt; \lfloor \frac{N}{x} \rfloor \leq \frac{N}{x}</p>
-<p>\frac{N}{x}-1 &lt; t \leq \frac{N}{x}</p>
-<p>\frac{N}{t+1} &lt; x \leq \frac{N}{t}</p>
+<p>$$\frac{N}{x}-1 &lt; \lfloor \frac{N}{x} \rfloor \leq \frac{N}{x} \</p>
+<p>\frac{N}{x}-1 &lt; t \leq \frac{N}{x} \</p>
+<p>\frac{N}{t+1} &lt; x \leq \frac{N}{t} \</p>
 <p>x \in [\lfloor \frac{N}{t+1}+1 \rfloor, \lfloor \frac{N}{t} \rfloor]<br>$$</p>
 <p>姑且設 $x \in [l, r]$。</p>
 <p>然後考慮這個區間每個 $x$ 會讓某個人成為邊緣人的「開始點」，會發現開始點就是 $tx + 1$，於是把 $max(tx + 1, L) \sim R$ 的人的答案 $+1$，於是對每個 $x \in [l, r]$ 做一樣的事情，起始點分別是 $tl + 1, t(l+1) + 1, t(l+2) + 1, … tr+1$ 然後做區間加值。</p>
