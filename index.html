@@ -521,7 +521,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022.03.29 22:55:21" itemprop="dateModified" datetime="2022-03-29T22:55:21+08:00">2022.03.29</time>
+                <time title="Modified: 2022.03.29 23:07:29" itemprop="dateModified" datetime="2022-03-29T23:07:29+08:00">2022.03.29</time>
               </span>
 
           
@@ -544,22 +544,6 @@
 
 
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。</p>
-<p>第一篇教學文 :D<br>廢話不多說，直接進入正文</p>
-<br>
-
-
-<h1 id="先備知識-—-如何產生亂數"><a href="#先備知識-—-如何產生亂數" class="headerlink" title="先備知識 — 如何產生亂數"></a>先備知識 — 如何產生亂數</h1><p><strong>懶人包：已經會的話可以直接跳過這一部分。</strong></p>
-<blockquote>
-<p>參考資料：<a target="_blank" rel="noopener" href="https://blog.gtwang.org/programming/cpp-random-number-generator-and-probability-distribution-tutorial/">https://blog.gtwang.org/programming/cpp-random-number-generator-and-probability-distribution-tutorial/</a></p>
-</blockquote>
-<p>要有一個可以產生亂數的工具，首先必須備齊三大工具：</p>
-<h2 id="1-亂數種子（Random-Seed）"><a href="#1-亂數種子（Random-Seed）" class="headerlink" title="1. 亂數種子（Random Seed）"></a>1. 亂數種子（Random Seed）</h2><details>
-  <summary>點我</summary>
-  
-<p>  亂數的生成幾乎都是用一些複雜的數學公式（偽隨機），而種子的功能就是做為這些公式的某些<strong>初始參數</strong>。</p>
-<p>  常用的種子是時間資訊，取用方法有 <code>time(NULL)</code> 或是 <code>chrono::steady_clock::now().time_since_epoch().count()</code>。</p>
-<p>  另外也可以用 <code>std::random_device</code>，這東西會抓系統的一些隨機資訊來產生亂數，詳細介紹可以看上面那篇參考資料。</p>
-</details>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/07/01/random/#more" rel="contents">
