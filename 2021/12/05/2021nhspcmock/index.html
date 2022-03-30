@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Light:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Cascadia Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 全國資訊學科能競模擬賽">
+<meta property="og:url" content="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/index.html">
+<meta property="og:site_name" content="Gino&#39;s Blog">
+<meta property="og:description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/rank.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/result.png">
+<meta property="article:published_time" content="2021-12-05T01:36:00.000Z">
+<meta property="article:modified_time" content="2022-03-30T01:58:43.151Z">
+<meta property="article:author" content="Gino">
+<meta property="article:tag" content="competitive programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/rank.png">
+
+<link rel="canonical" href="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2021 全國資訊學科能競模擬賽 | Gino's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Gino's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">從 Scratch 開始的資工之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://penguin-71630.github.io/2021/12/05/2021nhspcmock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.imgur.com/Sg8WRVu.png">
+      <meta itemprop="name" content="Gino">
+      <meta itemprop="description" content="雜談／日記／競賽心得／教學文">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021 全國資訊學科能競模擬賽
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021.12.05 09:36:00" itemprop="dateCreated datePublished" datetime="2021-12-05T09:36:00+08:00">2021.12.05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022.03.30 09:58:43" itemprop="dateModified" datetime="2022-03-30T09:58:43+08:00">2022.03.30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <style>
+.lv1 {
+    color: red;
+    font-weight: bold;
+}
+.lv2 {
+    color: #e89a13;
+    font-weight: bold;
+}
+.lv3 {
+    color: #bfad0b;
+    font-weight: bold;
+}
+.lv4 {
+    color: #27cf40;
+    font-weight: bold;
+}
+</style>
+
+
+<p>沒進全國賽，還好有這場優質的模擬賽可以過過乾癮 &gt; &lt;</p>
+<span id="more"></span>
+
+
+<h1 id="比賽資訊"><a href="#比賽資訊" class="headerlink" title="比賽資訊"></a>比賽資訊</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://contest.nhspc.cc/ranking/Ranking.html"><strong>計分板</strong></a></li>
+</ul>
+<img src="/2021/12/05/2021nhspcmock/rank.png" class>
+
+
+<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><img src="/2021/12/05/2021nhspcmock/result.png" class>
+
+
+
+<h1 id="比賽過程"><a href="#比賽過程" class="headerlink" title="比賽過程"></a>比賽過程</h1><p>幾乎沒打過 5hr OI，於是直接沿用 3hr OI 的打法，先花時間把所有題目掃過一次。</p>
+<p>大概讀了半個小時，後面幾題沒仔細研究就想開始寫 code 了。</p>
+<p>對題目大致上的理解：</p>
+<blockquote>
+<p><strong>pA</strong>：簽到題，4 次排序 + O(n) 掃過一次算答案，出到 $10^6$ 明顯就是要卡 map，結果真的一堆人被卡。</p>
+<p><strong>pB</strong>：拓樸排序。</p>
+<p><strong>pC</strong>：單調隊列 + 不難的數學。</p>
+<p><strong>pD</strong>：沒想法，但看到 53 分的限制大概猜有 $O(n^2)$ 的作法。</p>
+<p><strong>pE</strong>：感覺有點煩躁的實作，而且題敘似乎怪怪的，應該是「後面 $k$ 個人各自往前 $A_i$ 格」，題本寫 $A_i - k$。</p>
+<p><strong>pF</strong>：從這題開始，後面的題目我就沒認真看了，這題搞懂題意後，發現還是沒想法。</p>
+<p><strong>pG</strong>：題敘很短，但我不會數學。</p>
+<p><strong>pH</strong>：tag 應該是 dp，但我沒認真想。</p>
+<p><strong>pI</strong>：題目不難懂，但一點想法都沒有，看了一下暴力只有 7 分，22 分是序列的版本。</p>
+</blockquote>
+<p>打好模板就開寫 pA，中途忘記棋子不能跨過障礙物，算答案的時候把 $k-1$ 寫成 $C^k_2$，抓蟲抓好一陣子才發現。</p>
+<p>一發 AC。</p>
+<p><span class="lv4">00:59 pA 100</span></p>
+<p>之後確定 pB 想法是對的就開掉了。</p>
+<p><span class="lv4">01:08 pB 100</span></p>
+<p>去上個廁所，休息了 3 分鐘，回來就開始寫 pC。</p>
+<p>最後推數學式的時候又花了不少時間，看來智力還沒恢復。</p>
+<p><span class="lv4">01:50 pC 100</span></p>
+<p>休息之後開始想 pD，在上廁所的時候想到 $m$ 個出拳方式是各自獨立的，轉化一下題目後，發現了 $O(nm)$ 的 DP 作法。</p>
+<p>令 $dp[i][w]$ 為決定好前 $i$ 個位置的拳法，得分能否為 $w$（其中 $w$ 的值域介於 $-n \sim n$ 之間），標準的背包問題。</p>
+<p>但我一直在想有沒有複雜度更優的做法，閃過二分搜答案的想法但馬上排掉這念頭，因為顯然沒有任何單調性。</p>
+<p>最後決定先撈 53 分。</p>
+<p>開開心心寫完 DP 後才發現，幹忘記還要回溯答案，於是又修修改改，前後寫了快一小時。又在耍智障 &#x3D; &#x3D;”。</p>
+<p><span class="lv1">02:44 pD 0</span></p>
+<p>無解的時候把 <code>return;</code> 寫成 <code>exit(0);</code>，改一下就 53 分了。</p>
+<p><span class="lv3">02:48 pD 53</span></p>
+<p>接下來是整場犯下最大的錯誤。</p>
+<p>53 分拿到了，但我看到只有最後 4 筆 TLE 就一直告訴自己繼續拿滿，告訴自己再多壓一下常數會過。</p>
+<p>反正又開始腦衝亂改 pD 的 code，也不管後面的題目有多少分可以撈。</p>
+<p><span class="lv3">03:18 pD 53</span><br><span class="lv2">03:22 pD 14</span><br><span class="lv2">03:25 pD 6</span><br><span class="lv1">03:28 pD 0</span><br><span class="lv1">03:33 pD 0</span><br><span class="lv1">03:35 pD 0</span><br><span class="lv3">03:37 pD 53</span><br><span class="lv3">03:39 pD 53</span></p>
+<p>我到底在幹嘛…</p>
+<p>結論是 bitset 真的可以過，只是我現在覺得我沒過是因為回溯的常數沒有壓掉。</p>
+<p>其實本來有想過可以開兩個 bitset 存回溯值（只有 <code>R/P/S</code> 三種），這八成也是對的，但我賽中不寫就是不寫，硬要跑去改一些無關緊要的地方，最後又浪費了快一個小時。</p>
+<p>這時候才意識到剩不到 80 分鐘，馬上接回理智線，然後繼續往下想題目。</p>
+<p>pE 總算看懂，但還是覺得有點煩，pF 依舊沒想法，pG 只會 5 分，pH 還是看不懂，pI 沒想法，而且暴力感覺有點難寫而且只有 7 分我連碰都不想碰。</p>
+<p>這時候開始有點慌了，總覺得這樣下去會一分都拿不到，絕望之際突然靈光一閃，想到 pE 大概的作法，這時候我決定集中腦力思考 pE。</p>
+<p>思考大概 20 分鐘後，發現前面有 team 被 pop 掉的時候，假設 pop 掉 $r$ 個人，後面所有 size 大於 $r$ 的人都會被旋轉 $r$ 次，其他人完全無影響。</p>
+<p>所以可以用值域 BIT 維護「每次從隊伍中刪除的人數」的次數，大於 $max{A_i}$ 的可以忽略。</p>
+<p>並且預處理前綴和，每次詢問第 $k$ 個人是誰就先對前綴二分搜，搜 $k$ 在哪個隊伍裡面，接著用 BIT 查詢這個隊伍被旋轉了幾次（<code>bit.query(a[team]-1)</code>），就可以知道 $k$ 是誰。</p>
+<p>實作意外滿順的，雖然我還是寫了半小時 &#x3D; &#x3D;”</p>
+<p><span class="lv4">04:38 pE 100</span></p>
+<p>剩 20 分鐘只能撈最水最好寫的分數。</p>
+<p>發現 pG 5 分語法分，馬上撈掉。</p>
+<p><span class="lv2">04:47 pG 5</span></p>
+<p>22 分感覺欠三分搜，沒有驗過就開寫，結果還真的是這樣。</p>
+<p><span class="lv2">04:56 pG 22</span></p>
+<blockquote>
+<p><strong>Score: 480&#x2F;900, Rk: 15</strong></p>
+</blockquote>
+<h1 id="賽後檢討"><a href="#賽後檢討" class="headerlink" title="賽後檢討"></a>賽後檢討</h1><p>北市賽後都在搶救學分，段考完後發現已經兩個禮拜沒寫 code 了，所以我也不期望這場會打得多好。</p>
+<p>賽中發現思考、實作都滿卡的，前面的水題不應該寫那麼久。</p>
+<p>不過最可悲的應該是第 3 個小時了吧，一直想拿 pD 滿分還堅持不寫對的做法，腦袋不知道被什麼東西卡到，又是跟北市賽犯一樣的錯誤。</p>
+<p>打完發現有 Rk.15，其實覺得還行，從高一 Rk.69 $\rightarrow$ 高二 Rk.27 $\rightarrow$ 高三 Rk.15，發現底力有在進步，還滿開心的。</p>
+<p>不過這次一堆人裝弱／沒打，實際上可能 Rk.20~30 ，就算進了全國賽，大概也只能拿個四等獎吧。但我終究是沒進，終究沒辦法穿到全國賽的 T-shirt，終究沒辦法當個全職競賽選手。剩 47 天，還是認命去讀學測吧，這陣子應該不會再練競賽了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/competitive-programming/" rel="tag"># competitive programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/14/2021thspc/" rel="prev" title="2021 臺北市資訊學科能力競賽">
+      <i class="fa fa-chevron-left"></i> 2021 臺北市資訊學科能力競賽
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/02/07/Meow/" rel="next" title="The Start of Everything">
+      The Start of Everything <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E8%B3%87%E8%A8%8A"><span class="nav-number">1.</span> <span class="nav-text">比賽資訊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C%E6%AA%A2%E8%A8%8E"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Gino"
+      src="https://i.imgur.com/Sg8WRVu.png">
+  <p class="site-author-name" itemprop="name">Gino</p>
+  <div class="site-description" itemprop="description">雜談／日記／競賽心得／教學文</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Penguin-71630" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Penguin-71630" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gino</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

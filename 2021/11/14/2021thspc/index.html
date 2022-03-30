@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Light:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Cascadia Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 臺北市資訊學科能力競賽">
+<meta property="og:url" content="http://penguin-71630.github.io/2021/11/14/2021thspc/index.html">
+<meta property="og:site_name" content="Gino&#39;s Blog">
+<meta property="og:description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/11/14/2021thspc/thspcmockrank.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/11/14/2021thspc/thspcrank.png">
+<meta property="article:published_time" content="2021-11-14T01:36:00.000Z">
+<meta property="article:modified_time" content="2022-03-30T01:48:45.665Z">
+<meta property="article:author" content="Gino">
+<meta property="article:tag" content="competitive programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://penguin-71630.github.io/2021/11/14/2021thspc/thspcmockrank.png">
+
+<link rel="canonical" href="http://penguin-71630.github.io/2021/11/14/2021thspc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2021 臺北市資訊學科能力競賽 | Gino's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Gino's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">從 Scratch 開始的資工之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://penguin-71630.github.io/2021/11/14/2021thspc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.imgur.com/Sg8WRVu.png">
+      <meta itemprop="name" content="Gino">
+      <meta itemprop="description" content="雜談／日記／競賽心得／教學文">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021 臺北市資訊學科能力競賽
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021.11.14 09:36:00" itemprop="dateCreated datePublished" datetime="2021-11-14T09:36:00+08:00">2021.11.14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022.03.30 09:48:45" itemprop="dateModified" datetime="2022-03-30T09:48:45+08:00">2022.03.30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <style>
+.lv1 {
+    color: red;
+    font-weight: bold;
+}
+.lv2 {
+    color: #e89a13;
+    font-weight: bold;
+}
+.lv3 {
+    color: #bfad0b;
+    font-weight: bold;
+}
+.lv4 {
+    color: #27cf40;
+    font-weight: bold;
+}
+</style>
+
+
+
+<p>去年三月參加資芽（我參加了兩次），那是我入坑競程的時間點，但真正比較認真練競賽大概是四個月前的事，所以這次心得文不只包含北市賽，也包含了賽前的心路歷程(?)，打完才發現寫太長，就當作是看小說，分段看完吧(X</p>
+<span id="more"></span>
+
+
+<h1 id="趣事"><a href="#趣事" class="headerlink" title="趣事"></a>趣事</h1><ol>
+<li><p>BurnChickenLemma三人組全部三等獎，神默契www。在此立個願望，<strong>明年我們三個全部成功進選訓，一起去師大玩</strong>。</p>
+<blockquote>
+<p>燒雞定理 &#x3D; Sam + Foxyy + Gino，名稱來源：Burnside’s Lemma</p>
+</blockquote>
+</li>
+<li><p>一二三等獎的線切的意外乾淨，師大也太神。</p>
+</li>
+<li><p>比賽的時候一直感覺到有股靈壓，尤其比賽過一小時，本來快炸掉瞬間冷靜下來進入撈分模式，出場翻轉播紀錄，果不其然又是 joy 在發功。</p>
+</li>
+<li><p>下午跟建中團去玩桌遊。玩富饒之城被刺殺兩輪錢又被偷光，0 遊戲體驗 &#x3D; &#x3D;”，然後那隻聒狐又打翻飲料，不意外。</p>
+</li>
+<li><p>玩碰撞機器人，Foxd 無情開電連續拿分，後來另一桌電神團也圍過來，一等三 aka DFS 大師 Alvin Chang 直接優超所有人把剩下的點全部撿走 &lt;(_ _)&gt;。</p>
+</li>
+<li><p>@鄭詠堯 被 Foxdd 戳爆還一直被當狗狗，雖然有點同情但打架過程真的好好笑wwww</p>
+</li>
+</ol>
+<h1 id="楔子"><a href="#楔子" class="headerlink" title="楔子"></a>楔子</h1><p>最一開始是把目標放在二等獎，結果差一點如願，雖然很可惜，但也只能笑著接受了。</p>
+<p>定下這個目標大概是上學期期末吧，那時候被段考還有一堆死線迫近的報告壓得喘不過氣，作息大亂也讓身體也出了不少問題，跑診所醫院、諮商、吃藥，很痛苦，完全沒有活著的感覺。</p>
+<p>翻到別人的全國賽心得文，可以去新竹玩兩天，可以認識電神，可以享受優質的比賽，可以拿全國賽專屬的 T-shirt，很帥，很威風。</p>
+<p>另一方面是因為我不想再過那種被課業壓著過活的日子，我想真正全心投入自己喜歡的事，做我自己，哪怕學測已漸漸迫近，緩緩吞噬掉我的時間。</p>
+<p>想進全國賽的原因就這麼單純，沒有多麼神聖，也不需要。</p>
+<p>心之所向，身之所往，一場叛逆行旅就此開始。</p>
+<h1 id="訓練"><a href="#訓練" class="headerlink" title="訓練"></a>訓練</h1><p>開始練的時候是7月中，前面還在收資專的尾，另外還把高一的數專繼續延伸，跑去學FFT，包成學習歷程檔案，前後弄了兩個禮拜。</p>
+<p>最初就把競賽演算法列出來，看有什麼要學。結果別說大科技，光基礎演算法就學的七零八落，連 Dijkstra 都不會寫。</p>
+<p>想起年初參加 AA 競程，幾乎每場模擬賽倒數三名，被 dreamoon 說基礎功不夠，考慮很多 OJ，最後選擇從 CSES 開始刷，把基礎扎穩。</p>
+<p>後來學校暑輔開始，上了兩個禮拜發覺極度浪費時間，於是直接退出，每天去圖書館，早上讀學測 + 下午練競賽。</p>
+<p>剛開學一個月是我最焦慮的時候，那時候疫情升溫，一直在擔心北市賽會不會被取消，而且學弟請了防疫假，每天都能在家訓練。而我？白天昏昏沉沉地坐在教室，晚上還要推學測進度，幾乎沒有時間刷題。就算真的有空也早就疲憊不堪，沒力氣想題目。看著他一天一天變得更強，雖然有些欣慰，但更多的是實力離他越來越遠和追不上其他人的焦慮。</p>
+<p>市賽前一個月，我發覺我在學校的情況彷彿回到暑輔，一樣糟糕，一樣在浪費時間。</p>
+<p>思考很久，想從這糟糕的環境脫身，跟爸媽還有班導溝通很久，成功請到公假。我說服他們的理由是，第一次段考幾乎都是我自己讀還能維持班排一，證明我有顧好課業的能力，而且班導也知道我的實力並非與全國賽沾不上邊，是有機會的。一番抗衡後總算爭取到屬於自己的時間。</p>
+<p>公假的時候基本上就是補題，把之前 vir 的建中校內賽補掉，除了花枝遊戲還沒寫其他都補完了。再來就一直刷 CSES，繼續補我不會的東西。</p>
+<p>這時候因緣際會下接了校隊培訓的字串講師（其實我本來就有這個念頭），所以又開始學字串演算法。課表上面排定 Rolling Hash, KMP, Z Value, Suffix Array，就去翻了板中講義、建中講義、CF EDU，按順序把它們學掉，寫了一些題目後就開始準備簡報。</p>
+<p>題外話，我覺得最大的障礙大概是 Z Value 了吧，一直搞不懂估算 Z 值下界的那個做法，打轉了兩三天，某天早上睡醒的時候忽然想通了，現在反而覺得 Z 沒那麼難。</p>
+<p>本來要接續學 Trie 跟 AC 自動機的，但因為上課日快到不得不把時間拿去趕工簡報。誰也沒想到這次比賽我居然是被 Trie 卡掉，只能怪自己運氣太差、實力不夠吧。</p>
+<p>剛好培訓也開始了，又學了不少東西，SOS、插頭DP、差分約束、變形 Dijkstra、二分圖匹配、高斯消去。Wiwi 把 SOS 講的很好懂，先前完全看不懂這次一聽就會；差分約束資芽就已經學會了只是還沒寫過；終於搞懂 Dijkstra 的原理＆ k 短路徑的正確作法。唯獨二分圖匹配我完全沒搞懂，之後再重學。</p>
+<p>有堂課講整體二分、CDQ、其他資結，但我 claim 那些東西北市賽不會出現，我就算學了賽中一定刻不出來，剛好早上跟著打建中模競（燒慘），所以那堂課我在補模競的題（還沒補完），就沒跟著課堂進度。</p>
+<p>接著輪到我上字串，前一晚 rehearse 到簡報一半就因為太累直接去睡覺，導致後半堂課講的有點卡。我覺得我整體講的還不錯，但連續講話 3 小時頭真的很暈，喉嚨也燒掉。幸好看了醫生，隔兩天就恢復了。</p>
+<p>培訓倒數三天，被 Wiwi 餵了很多很難的題目，然後每個人要各自認領題目上來講做法，不過題目真的太難，除了電 Shaun 還有少部分人成功過關外，其他題目都幾乎是 Wiwi 親自上來講解。之後找時間再慢慢補掉吧。</p>
+<p>最後一天早上是模擬競賽，307／Rk.6，打得還不錯。<strong>這場模擬賽對我來說很關鍵，我不只抓到了撈分的感覺，也對自己有了不少信心。</strong></p>
+<img src="/2021/11/14/2021thspc/thspcmockrank.png" class>
+
+<p>賽前一天一直在刷考古題，我很清楚自己底力不夠手感很容易斷，所以跟別人「賽前一天不做事／耍廢」的策略相反。</p>
+<p>晚上 9 點半就上床了，不過膀胱搞事，害我一直起來上廁所，過敏發作也讓我拖到 11 點半才入睡。</p>
+<p>隔天 6 點就起床，吃完早餐帶好東西就去師大報到了。</p>
+<h1 id="賽中"><a href="#賽中" class="headerlink" title="賽中"></a>賽中</h1><p>其實筆電試場意外的不錯。椅子高度很舒服，空間寬闊沒有壓迫感，重點是沒有嘈雜的鍵盤聲干擾思考，非常安靜，第一次打比賽能夠完全專注在題目上，感受不到其他人的存在。</p>
+<p>順帶一提 Ubuntu 用起來也很舒服，編譯跟執行速度特快。感受到師大的用心(?)，希望明年初選比賽環境也是這樣的規格。</p>
+<h2 id="賽前-30-分鐘"><a href="#賽前-30-分鐘" class="headerlink" title="賽前 30 分鐘"></a>賽前 30 分鐘</h2><p>反正就開幕式 + 講解規則，肚子燒雞所以跑去廁所。</p>
+<p>接著吃了兩片薄荷巧克力補血糖，去飲水機補水，然後就定位等比賽開始。</p>
+<h2 id="開場-—-1-hr／還沒睡醒"><a href="#開場-—-1-hr／還沒睡醒" class="headerlink" title="開場 — 1 hr／還沒睡醒"></a>開場 — 1 hr／還沒睡醒</h2><p>開場花了些時間熟悉環境，開好 gedit、調設定、打編譯指令、打模板、…前後過了 10 分鐘才開題。</p>
+<p>題目可以參考 Shaun 的心得文：<br><a target="_blank" rel="noopener" href="https://hackmd.io/lFPgW0mDTmW_wR1sTpEbhw?view">https://hackmd.io/lFPgW0mDTmW_wR1sTpEbhw?view</a></p>
+<p>總之題目的 tag 大概是這樣：</p>
+<blockquote>
+<p><strong>pA／</strong> 上次 APCS P2 的既視感，看起來不難的語法題但我就是寫不出來的那種<br><strong>pB／</strong> 裸 trie<br><strong>pC／</strong> 看起來是 DP 但我不會，不過 80 分很甜<br><strong>pD／</strong> 看不懂<br><strong>pE／</strong> 看不懂 again<br><strong>pF／</strong> 圖著色問題，但這不是 NP 問題嗎 …？</p>
+</blockquote>
+<p>看完題目，心涼了一截，trie 偏偏沒寫過，A 很煩躁，C 不會，D E 看不懂，F 更不在我學過的知識範圍內。</p>
+<p>想說 A 八成是簽到題，於是就開寫了。寫完以後範測炸開，才發現做法有問題，但我腦袋似乎還沒醒，一直亂改、亂試，好不容易範測對了，丟上去</p>
+<p><span class="lv3">01:02 pA 71</span></p>
+<p>蛤，只過長方形的 subtask？</p>
+<p>然後我又繼續亂修、亂傳，中間還傳錯檔案</p>
+<p><span class="lv1">01:05 pA 0</span><br><span class="lv3">01:07 pA 71</span></p>
+<p>沒注意到已經過一小時了。</p>
+<h2 id="1-hr-—-1-5-hr／啟動撈分程序"><a href="#1-hr-—-1-5-hr／啟動撈分程序" class="headerlink" title="1 hr — 1.5 hr／啟動撈分程序"></a>1 hr — 1.5 hr／啟動撈分程序</h2><p>心態快要炸掉之際，大概是感受到 joy 的靈壓，我的理智線突然重新接回，pA 丟旁邊，想都不想就開始往下撈分。</p>
+<p>pB 暴力比對 62 分</p>
+<p><span class="lv3">01:13 pB 62</span></p>
+<p>pC 隨便 greedy 唬爛 32 分</p>
+<p><span class="lv3">01:21 pC 32</span><br>但其實一開始有 57 分，後來好像加強測資，所以被校正回歸。</p>
+<p>到這邊跑回去嘗試修 pA，結果沒成功。</p>
+<p><span class="lv3">01:34 pA 71</span></p>
+<p>pD 想到要先用高斯消去弄出本來的數字，但還是搞不懂要拿這些數字幹嘛，範測也沒認真推，直接被我跳過。</p>
+<p>中途去上了廁所，也順便想了一下接下來的撈分順序。</p>
+<h2 id="1-5-hr-—-2-5-hr／品庠式打法"><a href="#1-5-hr-—-2-5-hr／品庠式打法" class="headerlink" title="1.5 hr — 2.5 hr／品庠式打法"></a>1.5 hr — 2.5 hr／品庠式打法</h2><p>重新讀 pE，總算搞懂在幹嘛，不過暫時觀察不出題目給的建邊方式有什麼關鍵點，只好先寫 37 分的 0&#x2F;1 枚舉。</p>
+<p><span class="lv2">02:02 pE 37</span></p>
+<p>這時候發現 pC 可以位元DP，馬上跳去寫，而且 5 分鐘就寫完了。</p>
+<p><span class="lv3">02:10 pC 80</span></p>
+<p>然後發現我還沒動那題 output only，所以就跳去那題開始唬爛。</p>
+<p>先隨便寫了個 greedy 塗色，每次塗色掃過鄰點的顏色找 mex，丟上去</p>
+<p><span class="lv2">02:28 pF 30</span></p>
+<p>只有 30 分？<del>師大測資什麼時候這麼強了</del></p>
+<p>小改一下 code，但有改跟沒改一樣</p>
+<p><span class="lv2">02:34 pF 30</span></p>
+<h2 id="2-5-hr-—-3-hr／被-trie-送下去"><a href="#2-5-hr-—-3-hr／被-trie-送下去" class="headerlink" title="2.5 hr — 3 hr／被 trie 送下去"></a>2.5 hr — 3 hr／被 trie 送下去</h2><p>這時候發現不對勁，pB 應該要拿滿才對，可是我完全沒有寫過 trie，這時候開始有點慌了。</p>
+<p>匆匆跑去上廁所順便嘗試通靈 trie 的寫法，回來大概花了 10 分鐘，範測沒測丟上去，0分。</p>
+<p><span class="lv1">02:48 pB 0</span></p>
+<p>測範測結果發現寫爛掉，徹底沒救的爛掉。</p>
+<p>這時想說剛剛暴力 $O(N^2 L) &#x3D; 5 \times 10^9$ 都過了，感覺 rolling hash + 二分搜，順便加個剪枝（按照序列第一個數字分堆）應該有機會，我賭師大測資不會這麼強。</p>
+<p>先把分堆寫好丟上去，</p>
+<p><span class="lv3">02:54 pB 62</span></p>
+<p>很棒，它是好的，接下來 rolling hash…</p>
+<p>刻完 hash，剩兩分鐘…</p>
+<p>刻完二分搜，剩兩秒鐘…</p>
+<p><span class="lv1">Game Over.</span></p>
+<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><h2 id="Final-Score／Rank"><a href="#Final-Score／Rank" class="headerlink" title="Final Score／Rank"></a>Final Score／Rank</h2><blockquote>
+<p>Total Score：<strong>280</strong>／Rank：<strong>16</strong>／<strong>三等獎</strong><br><a target="_blank" rel="noopener" href="https://sorahisa.github.io/OI/DumpedRanks/nhspc2021_tpe/ranking/Ranking.html"><strong>計分板連結</strong></a></p>
+</blockquote>
+<img src="/2021/11/14/2021thspc/thspcrank.png" class>
+
+
+<h2 id="Subtasks-Gained"><a href="#Subtasks-Gained" class="headerlink" title="Subtasks Gained"></a>Subtasks Gained</h2><blockquote>
+<p><span class="lv4">Tried and Accepted</span><br><span class="lv3">Tried but in Vain</span><br><span class="lv1">Supposed to Try &#x2F; Easy Subtask</span></p>
+</blockquote>
+<p><strong>pA</strong> <span class="lv4">21</span>／<span class="lv4">23</span>／<span class="lv4">27</span>／<span class="lv3">19</span>／<span class="lv3">10</span></p>
+<p><strong>pB</strong> <span class="lv4">29</span>／<span class="lv4">33</span>／<span class="lv3">38</span></p>
+<p><strong>pC</strong> <span class="lv4">14</span>／<span class="lv4">18</span>／<span class="lv4">25</span>／<span class="lv4">23</span>／20</p>
+<p><strong>pD</strong> <span class="lv1">27</span>／<span class="lv1">27</span>／<span class="lv1">46</span></p>
+<p><strong>pE</strong> <span class="lv4">37</span>／63</p>
+<p><strong>pF</strong> <span class="lv4">10</span>／<span class="lv4">10</span>／10／10／10／10／10／10／<span class="lv4">10</span>／<span class="lv3">10</span></p>
+<h1 id="賽後"><a href="#賽後" class="headerlink" title="賽後"></a>賽後</h1><p>比賽結束後，算一算分數只有 280，連一半都沒有。</p>
+<p>對照去年的分數分布，別說全國賽了，當下覺得自己連三等都沒有，甚至掉到佳作底。</p>
+<p>最後成績確認的時候，瞄到一堆人 300、400 多，完了，又開始慌了，越來越焦慮…</p>
+<p>顫抖地拿起手機，打開計分板…</p>
+<p>這計分板為什麼黃黃的？？？</p>
+<blockquote>
+<p><strong>280／Rk.16</strong></p>
+</blockquote>
+<p>打這麼爛居然有三等獎？！</p>
+<p>出場後滿開心的，最後一年的北市賽，幸好不是佳作收尾。當初保底目標就是至少有前 20，算是滿足了心裡的部分願望。</p>
+<p>接下來細看分數分布，二等線 317，我只要 pB 有拿滿 &#x3D; 318…</p>
+<p>…</p>
+<p>對，差一個子題</p>
+<p>為了弄校隊培訓，學了 KMP、Z、Suffix Array，偏偏沒有學好 trie</p>
+<p>無奈 後悔 自責</p>
+<p>…</p>
+<p>剛才的喜悅為負面情緒浸染，悲喜交雜，接下來下午到晚上我都是帶著這種複雜的情緒度過。</p>
+<p>幸好打完這篇心得的時候已經釋懷了。</p>
+<h1 id="檢討"><a href="#檢討" class="headerlink" title="檢討"></a>檢討</h1><ol>
+<li>前一小時又陷入糟糕的狀態，一直認為 pA 是簽到題，一直覺得大家都過了只剩我還卡住，沒好好想清楚就亂寫。幸好有調整回來。<blockquote>
+<p><strong>現在意識到自己已經有一定的實力了，下次碰到這種情況可以合理相信「我做不出來的，大部分人也一定會被卡掉」。</strong></p>
+</blockquote>
+</li>
+<li>基本功不夠，連 trie 都不會寫，這次剛好被戳中痛點。<blockquote>
+<p><strong>底力不足，回頭看技能樹有哪些知識點還沒點到，就去把它點滿。吃大科技之前請先把底力練好。</strong></p>
+</blockquote>
+</li>
+<li>pD、pE 看了很久才看懂。pD 真的只是單純的高斯消去法，前兩天才刻過所以記憶猶新；pE 聽說是掃描線，我覺得只要好好靜下來思考就能想出正解。<blockquote>
+<p><strong>讀題速度、精準度待加強，但除了刷題外我想不到其他特別加強這個的方法。</strong></p>
+</blockquote>
+</li>
+<li>pF 我拿了 1、2、9，但聽說 10 是二分圖，覺得很怪，八成是實作又有問題但我不知道 bug 在哪。<blockquote>
+<p><strong>多嘗試唬爛的方法，能撈盡量撈(?)</strong></p>
+</blockquote>
+</li>
+</ol>
+<p>.</p>
+<p>我覺得最不應該發生的問題是 1.。</p>
+<p>vir 了不少比賽，結果一不注意還是會陷入卡死的狀態。</p>
+<p>初選、資芽認證考、校內賽、這次市賽都是因為掉入情緒漩渦而失常。</p>
+<p>終於意識到這個問題的嚴重性，把它列入策略守則，每次比賽都要提醒自己不能卡死不能卡死不能卡死#</p>
+<h1 id="It’s-not-the-end"><a href="#It’s-not-the-end" class="headerlink" title="It’s not the end."></a>It’s not the end.</h1><p>儘管與全國賽無緣，但我已經對拿了三等獎的自己很滿意了，而且最要好的另外兩個同伴也都拿了三等，滿開心的，雖然都差一點進全國XD。</p>
+<p>反正都知道問題在哪了，接下來就繼續練吧，明年還有初選，我是不會放棄的。</p>
+<p>然後文章開頭有提到，</p>
+<blockquote>
+<p>在此立個願望，<strong>明年我們三個全部成功進選訓，一起去師大玩</strong>。</p>
+</blockquote>
+<p>來發個祭品吧。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (我沒進 TOI) <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line"><span class="type">int</span> ramen = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span> (山姆有進 TOI) ramen++;</span><br><span class="line"><span class="keyword">if</span> (Foxyy 有進 TOI) ramen++;</span><br><span class="line"><span class="keyword">if</span> (山姆跟 Foxyy 都有進) ramen++;</span><br></pre></td></tr></table></figure>
+
+<p><strong>按 FB 貼文愛心就可以抽拉麵。</strong> 其他表符都不算喔XD</p>
+<p>喔然後 @Sam @Foxyy 如果你們兩個有進的話我會單獨請你們拉麵，當然前提是我也要有進。一起加油吧。</p>
+<p>回去練題囉 88。</p>
+<p><span class="lv1"> I shall return. </span></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/competitive-programming/" rel="tag"># competitive programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/24/2021ckcon2/" rel="prev" title="2021 建中校隊複選 Virtual">
+      <i class="fa fa-chevron-left"></i> 2021 建中校隊複選 Virtual
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/05/2021nhspcmock/" rel="next" title="2021 全國資訊學科能競模擬賽">
+      2021 全國資訊學科能競模擬賽 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B6%A3%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">趣事</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A5%94%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">楔子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%93%E7%B7%B4"><span class="nav-number">3.</span> <span class="nav-text">訓練</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E4%B8%AD"><span class="nav-number">4.</span> <span class="nav-text">賽中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%BD%E5%89%8D-30-%E5%88%86%E9%90%98"><span class="nav-number">4.1.</span> <span class="nav-text">賽前 30 分鐘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A0%B4-%E2%80%94-1-hr%EF%BC%8F%E9%82%84%E6%B2%92%E7%9D%A1%E9%86%92"><span class="nav-number">4.2.</span> <span class="nav-text">開場 — 1 hr／還沒睡醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-hr-%E2%80%94-1-5-hr%EF%BC%8F%E5%95%9F%E5%8B%95%E6%92%88%E5%88%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.3.</span> <span class="nav-text">1 hr — 1.5 hr／啟動撈分程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-hr-%E2%80%94-2-5-hr%EF%BC%8F%E5%93%81%E5%BA%A0%E5%BC%8F%E6%89%93%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">1.5 hr — 2.5 hr／品庠式打法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-hr-%E2%80%94-3-hr%EF%BC%8F%E8%A2%AB-trie-%E9%80%81%E4%B8%8B%E5%8E%BB"><span class="nav-number">4.5.</span> <span class="nav-text">2.5 hr — 3 hr／被 trie 送下去</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">比賽結果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-Score%EF%BC%8FRank"><span class="nav-number">5.1.</span> <span class="nav-text">Final Score／Rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subtasks-Gained"><span class="nav-number">5.2.</span> <span class="nav-text">Subtasks Gained</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C"><span class="nav-number">6.</span> <span class="nav-text">賽後</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AA%A2%E8%A8%8E"><span class="nav-number">7.</span> <span class="nav-text">檢討</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#It%E2%80%99s-not-the-end"><span class="nav-number">8.</span> <span class="nav-text">It’s not the end.</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Gino"
+      src="https://i.imgur.com/Sg8WRVu.png">
+  <p class="site-author-name" itemprop="name">Gino</p>
+  <div class="site-description" itemprop="description">雜談／日記／競賽心得／教學文</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Penguin-71630" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Penguin-71630" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gino</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

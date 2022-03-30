@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffffe2;
+  background: #9db063;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2594,4 +2594,11 @@ mjx-container + br {
 }
 .archive .collection-title {
   display: none !important;
+}
+body {
+  background: url("/images/colordotwallpaper2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
 }

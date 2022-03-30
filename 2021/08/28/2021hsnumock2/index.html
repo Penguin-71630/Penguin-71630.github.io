@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Light:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Cascadia Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 附中暑期培訓模擬競賽 II">
+<meta property="og:url" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/index.html">
+<meta property="og:site_name" content="Gino&#39;s Blog">
+<meta property="og:description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaska.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaskb.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaskc.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaskd.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaske.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/result.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/inputa.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/sortprob.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/s1.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/s2.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/s3.png">
+<meta property="article:published_time" content="2021-08-28T10:35:17.000Z">
+<meta property="article:modified_time" content="2022-03-30T11:32:05.755Z">
+<meta property="article:author" content="Gino">
+<meta property="article:tag" content="competitive programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/subtaska.png">
+
+<link rel="canonical" href="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2021 附中暑期培訓模擬競賽 II | Gino's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Gino's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">從 Scratch 開始的資工之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://penguin-71630.github.io/2021/08/28/2021hsnumock2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.imgur.com/Sg8WRVu.png">
+      <meta itemprop="name" content="Gino">
+      <meta itemprop="description" content="雜談／日記／競賽心得／教學文">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021 附中暑期培訓模擬競賽 II
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021.08.28 18:35:17" itemprop="dateCreated datePublished" datetime="2021-08-28T18:35:17+08:00">2021.08.28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022.03.30 19:32:05" itemprop="dateModified" datetime="2022-03-30T19:32:05+08:00">2022.03.30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <style>
+.lv1 {
+    color: red;
+    font-weight: bold;
+}
+.lv2 {
+    color: #e89a13;
+    font-weight: bold;
+}
+.lv3 {
+    color: #bfad0b;
+    font-weight: bold;
+}
+.lv4 {
+    color: #27cf40;
+    font-weight: bold;
+}
+</style>
+
+
+
+<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><h2 id="pA"><a href="#pA" class="headerlink" title="pA"></a>pA</h2><p><strong>機器鴨</strong><br>有兩個長度為 $n$ 的序列 $a, b$，有隻機器鴨會從原點依照這個序列移動，第 $i$ 個時刻，機器鴨會直線移動向量 $(a_i, b_i)$。</p>
+<p>請重新排列序列 $a, b$，使得機器鴨能夠走回原點，並且移動過程中不會走到已經走過的點。無解輸出 $-1$。</p>
+<p>$3 \leq n \leq 100$</p>
+<p>$1 \leq |a_i|, |b_i| \leq 300$</p>
+<p>$a_i \neq a_j$</p>
+<p><strong>Subtask</strong></p>
+<img src="/2021/08/28/2021hsnumock2/subtaska.png" class>
+
+
+<h2 id="pB"><a href="#pB" class="headerlink" title="pB"></a>pB</h2><p><strong>惡地之路</strong><br>$n$ 點 $m$ 邊帶權無向圖，每條邊有權重 $p_i$，定義從某點 $s$ 走到 $t$ 的票價為「路徑的權重和 $\times$ 經過的邊數」。</p>
+<p>輸出從節點 $1$ 走到節點 $1 \sim n$ 的最小票價。</p>
+<p>$1 \leq n \leq 2000$</p>
+<p>$1 \leq m \leq 30000$</p>
+<p>$1 \leq p_i \leq 10^6$</p>
+<p><strong>Subtask</strong></p>
+<img src="/2021/08/28/2021hsnumock2/subtaskb.png" class>
+
+
+
+<h2 id="pC"><a href="#pC" class="headerlink" title="pC"></a>pC</h2><p><strong>調色盤</strong><br>有一長度為 $n$ 的序列 $c$，並有一數字 $k$。</p>
+<p>$q$ 筆詢問 $(l, r)$，求有多少數對 $(i, j)$，滿足 $l \leq c_i \leq c_j \leq r  \land |c_i| - |c_j| \leq k$。</p>
+<p>$1 \leq n, k, q, c_i \leq 10^6$</p>
+<p><strong>Subtask</strong></p>
+<img src="/2021/08/28/2021hsnumock2/subtaskc.png" class>
+
+
+
+<h2 id="pD"><a href="#pD" class="headerlink" title="pD"></a>pD</h2><p><strong>告示牌</strong><br>$n$ 個字串 $s_1,…,s_n$ 要寫到一個告示牌上，一個字串必定只能出現在一行，不可斷開。</p>
+<p>在不超過 $k$ 行的情況下，告示牌最少需要有多寬？</p>
+<p>$1 \leq k, \sum_{i&#x3D;1}^{n} |s_i| \leq 2 \times 10^5$</p>
+<p><strong>Subtask</strong></p>
+<img src="/2021/08/28/2021hsnumock2/subtaskd.png" class>
+
+
+
+<h2 id="pE"><a href="#pE" class="headerlink" title="pE"></a>pE</h2><p><strong>變色蠑螈</strong><br>一種魔法可用數對 $(a, b)$ 表示，代表可以將數字 $a$ 轉換成數字 $b$，或是反過來將 $b$ 轉換成 $a$。</p>
+<p>現在有 $n$ 個要求，每個要求以 $(c, d)$ 表示，表示要將數字 $c$ 轉換成數字 $d$，請問最少需要學會幾種魔法才能達成上述要求。</p>
+<p>$1 \leq n \leq 2 \times 10^5$</p>
+<p>$1 \leq a, b, c, d \leq 10^9$</p>
+<p><strong>Subtask</strong></p>
+<img src="/2021/08/28/2021hsnumock2/subtaske.png" class>
+
+
+
+<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><p><strong>Score：210／Rank：2nd</strong></p>
+<img src="/2021/08/28/2021hsnumock2/result.png" class>
+
+
+
+
+<h1 id="比賽過程"><a href="#比賽過程" class="headerlink" title="比賽過程"></a>比賽過程</h1><p>賽前 5 分鐘還跑去拉肚子，有點雷。</p>
+<p>開場時網路爛掉，pE 點「下載題本」一直沒反應，於是重複點了 20 幾次，最後受不了去看其他題，正要看的時候剛剛的按鈕突然全部有了反應，於是我又連續 20 幾次點了「取消下載」，有夠靠北。</p>
+<p>一樣先讀題，15 分鐘。比較慘的是我 pA 跟 pE 沒讀仔細，漏了關鍵限制，所以難度排序一整個大亂。</p>
+<p>當時的難度排序：<code>pA &lt; pD &lt; pB &lt; pC &lt; pE</code>，幾乎把正確順序整個倒過來。</p>
+<p>pA 以為鴨子移動過程可視為瞬間移動，想說只要 $\sum a_i$ 跟 $\sum b_i$ 都 $&#x3D;0$ 那隨便排列 $a, b$ 都有高機率是正確答案。但我忘記是直線前進所以經過的路徑也不能有交點。</p>
+<p>不只讀錯題想法還一點都不嚴謹，有夠笨。反正就以為是簽到題就開始寫下去了。</p>
+<p>結果過程中碰到很弔詭的 bug，題本疑似有不乾淨的字元，我直接複製到 code 底下再貼到 console 竟然沒辦法輸入，於是又重新檢查模板、主程式，又換了好幾次寫法，最後改成手動輸入才終於安分地吃進數字。莫名其妙地又浪費二十分鐘在解決看不見的 bug。</p>
+<img src="/2021/08/28/2021hsnumock2/inputa.png" class>
+
+<p>上面那個是爛掉的輸入，下面是好的，有夠奇怪。</p>
+<p>丟上去結果吃了 WA（賽後覺得吃 WA 不意外）。</p>
+<p><span class="lv1"><strong>00:40 pA 0分</strong></span></p>
+<p>賽中沒發現是題目讀錯，又耍智障了 15 分鐘結果一分都沒有</p>
+<p><span class="lv1"><strong>00:42 pA 0分</strong></span><br><span class="lv1"><strong>00:45 pA 0分</strong></span><br><span class="lv1"><strong>00:50 pA 0分</strong></span><br><span class="lv1"><strong>00:52 pA 0分</strong></span></p>
+<p>前面發生的一堆意外、pA 一直燒，加上過了一個小時卻一分都沒有。這時心態基本上已經崩了，完全不想繼續寫下去。觸犯比賽的大忌。</p>
+<p>上廁所回來，心情恢復一些但沒完全回復，這時選擇繼續想其他題目。</p>
+<p>pB 最短路徑，感覺可以直接砸 dijkstra，但沒有想清楚這其實是假解。</p>
+<p>pC 完全不會，區間問題是我的痛點，只有 $O(nq)$ 雙指針的想法。</p>
+<p>pD 裸二分搜，有信心直接 AC。</p>
+<p>pE 讀題目的時候有讀到一個魔法可以從 a 變成 b 也可以反過來（無向邊），但放到腦中思考的時候自動變成了有向邊，於是就卡住，完全沒注意到這是並查集水題QQ。</p>
+<p>這時我覺得 pD 雖然比較簡單，但我實作 dijkstra 比較穩定，於是就先從 pB 開始寫。10 分鐘後寫完就丟上去了。</p>
+<p><span class="lv3"><strong>01:11 pB 39分</strong></span></p>
+<p>有點慶幸總算有分數了，但我預期的是滿分，百思不解又繼續盯著 code，然後開始很智障地改一些沒有用處的實作小細節。這樣一拖又浪費了 30 分鐘</p>
+<p><span class="lv3"><strong>01:19 pB 39分</strong></span><br><span class="lv3"><strong>01:22 pB 39分</strong></span><br><span class="lv3"><strong>01:25 pB 39分</strong></span><br><span class="lv3"><strong>01:42 pB 39分</strong></span></p>
+<p>心態又更糟了，甚至一度認為是測資的問題。上完廁所後才終於肯跳題。</p>
+<p>pD 穩定地刻完二分搜就丟上去了，一發 AC。應該先寫這題來穩住心態的。</p>
+<p><span class="lv4"><strong>01:57 pD 100分</strong></span></p>
+<p>接下來開始撈分，首先是 pA，這時候我才注意到我看錯題目，被自己笨死。</p>
+<p>讀了子題，前 25 分可以暴力 $O((n!)^2 \times n^2)$ 拿掉，28 分觀察到可以先對 $a$ 排序，前 $n-1$ 個向量所形成的軌跡會是一個下凸包，最後則回到原點。於是改了一下剛剛的 code，丟上去 28 分。</p>
+<p><span class="lv2"><strong>02:05 pA 28分</strong></span></p>
+<p>這時候想刻 25 暴力分，沒想到除了要重寫外還需要刻向量模板。但我完全沒注意到 pC 更好撈而且分數更多，眼裡就只有 pA。</p>
+<p>悲慘的是，我寫爛了，連範測都沒過。</p>
+<p>剩下半個小時才驚覺時間不夠，這時才跳去 pC。邊寫邊想實作細節，幸好沒有出問題。</p>
+<p><span class="lv3"><strong>02:49 pC 37分</strong></span></p>
+<p>3 分只要加個特判就行了，多加幾行 if 丟上去我就去撈 pE 了，沒有去注意有沒有拿到，結果竟然沒有。</p>
+<p><span class="lv3"><strong>02:52 pC 37分</strong></span></p>
+<p>pE 的 6 分只要把 pair 丟進 set 就行了。</p>
+<p><span class="lv2"><strong>02:55 pE 6分</strong></span></p>
+<p>再來有 4 分是只要分 case，但因為我沒注意到邊是雙向的所以就沒有拿到QQ。</p>
+<p><span class="lv1"><strong>02:59 pE 0分</strong></span></p>
+<h1 id="賽後檢討"><a href="#賽後檢討" class="headerlink" title="賽後檢討"></a>賽後檢討</h1><p>一樣先列出這場出狀況＆耍智障的地方。</p>
+<ol>
+<li>賽前拉肚子／開場網路爛掉／pA 輸入吃到奇怪字元。</li>
+<li>pA 讀錯題目。</li>
+<li>pB 單層 dijkstra 大假解，分層 dijkstra 可以拿 82 分，完整做法是 DP。對分層 dijkstra 還不是很熟，這是我的盲點。</li>
+<li>pD 最簡單沒有先寫。</li>
+<li>pE 思考的時候忘記是無向邊，整場被自己雷死。</li>
+<li>糟糕的難度排序。</li>
+<li>pC 的 3 分沒拿到，是因為我在拿 37 分的時候為了加快 judge 結果，特意加了這行： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (n &gt; <span class="number">10000</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+ 結果忘記拔掉qwq。</li>
+</ol>
+<h1 id="總檢討"><a href="#總檢討" class="headerlink" title="總檢討"></a>總檢討</h1><h2 id="賽前"><a href="#賽前" class="headerlink" title="賽前"></a>賽前</h2><ol>
+<li>不要熬夜，11 點前就要上床。</li>
+<li>可以寫些水題維持手感也穩住心態。</li>
+<li>賽前一小時就要睡午覺，睡半小時起來才有時間讓腦袋暖機。</li>
+<li>深呼吸告訴自己「我超電」、「我可以的」，但不是「我一定可以拿300分」。</li>
+</ol>
+<h2 id="策略修正"><a href="#策略修正" class="headerlink" title="策略修正"></a>策略修正</h2><ol>
+<li><p>開場<strong>讀題 15 分鐘</strong>，讀題時務必連<strong>子題配分</strong>都要讀過一遍。</p>
+</li>
+<li><p><strong>打模板的時間 5 分鐘</strong>，打的時候不要一直思考有什麼忘記打，浪費腦力，反正之後要用再補就好。</p>
+</li>
+<li><p>按照<strong>難度排序</strong>題目的技能要再加強。</p>
+ <img src="/2021/08/28/2021hsnumock2/sortprob.png" class></li>
+<li><p><strong>時間分配</strong>：</p>
+<ul>
+<li><strong>觀察性質 3 分鐘</strong></li>
+<li><strong>思考解法 7 分鐘</strong></li>
+<li><strong>總實作時間 20 分鐘</strong></li>
+<li><strong>debug 10 分鐘</strong></li>
+</ul>
+<p>拿分間隔控制在 20 分鐘，最多不超過 30 分鐘。<br>停損點：思考 10 分鐘連 subtask 都沒想法就跳，<strong>卡了 40 分鐘</strong>一定要跳，不要一直想「”應該”還差一點就 AC 了」。</p>
+</li>
+<li><p><strong>觀察性質</strong>：</p>
+<ul>
+<li>注意變數範圍，誰特別大／特別小，作法 80% 跟它有關。</li>
+<li>題目「保證」某種性質 $\rightarrow$，作法 99% 跟它有關。</li>
+<li>常見手法：<ul>
+<li>對 OOO 排序</li>
+<li>數值丟到數線上</li>
+<li>數對 (a, b) $\rightarrow$ 二維平面</li>
+<li>區間問題：離線、雙指針、單調性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>思考解法</strong>：</p>
+<ul>
+<li>寫下範測，釐清題目。</li>
+<li>可以構造複雜點的測資幫助思考。</li>
+</ul>
+<p>停損點：<strong>10 分鐘</strong>。</p>
+</li>
+<li><p><strong>實作</strong>：</p>
+<ul>
+<li>想到什麼 subtask 就寫什麼。</li>
+<li>評估實作細節 2~3 分鐘。</li>
+<li>分段 check 程式。</li>
+</ul>
+<p>停損點：<strong>20 分鐘</strong>。</p>
+</li>
+<li><p><strong>debug</strong> 時，先用 1 分鐘檢查有沒有智障 bug。</p>
+<ul>
+<li><span class="lv1">沒開 long long</span></li>
+<li><span class="lv1">陣列戳出界</span></li>
+<li><span class="lv1">寫好的函式忘記呼叫</span></li>
+<li><span class="lv1">0-base／1-base</span></li>
+<li><span class="lv1">忘記初始化</span></li>
+<li><span class="lv1">&#x3D;&#x3D;打成&#x3D;</span></li>
+</ul>
+<p>構造測資，可以試試邊界測資，不要一直盯著 code。<br>有可能假解只是自己沒發現。<br>停損點：<strong>10 分鐘</strong>。</p>
+</li>
+</ol>
+<h2 id="賽中心態調整"><a href="#賽中心態調整" class="headerlink" title="賽中心態調整"></a>賽中心態調整</h2><ol>
+<li>把比賽想成是跟出題者決鬥，AC 了代表運氣好決鬥獲勝，WA 了也只代表沒有打贏出題者，滿正常的事，絕對不要認為是因為自己實作爛實力爛，換一題跟他打就好。</li>
+<li>不要急著想拿滿分，大部分的 AC 都是一點一點分數累積上去的，就算想到滿分解也是一樣。</li>
+<li>丟一筆 submission 就去廁所，過半場吃點心。</li>
+<li>換題的時候，一切重新 reset，剛剛發生了什麼事都不重要，不要掛在心上。</li>
+<li>你炸掉大家也都會炸掉。</li>
+</ol>
+<h1 id="實用文章"><a href="#實用文章" class="headerlink" title="實用文章"></a>實用文章</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="https://hackmd.io/Cd5AugwvQlmhrH-97O1PVw">IOI 前國手 張程凱 - IOI 準備心得</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://slides.com/emanlaicepsa/toi/?fbclid=IwAR1XBQiTBGzPdiCh8SiAdMepXzlqBNE7Na9P0kULFkqE05wUovc7PwvCFuc">IOI 前國手 曹宸睿 - TOI 入營考訓練</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.facebook.com/permalink.php?story_fbid=873924860066850&id=100023480331778">TOI 一階電神 林柏瑄 - 2021 TOI 心得文</a></p>
+</li>
+<li><p>電神們的建議</p>
+</li>
+</ol>
+<img src="/2021/08/28/2021hsnumock2/s1.png" class>
+
+<img src="/2021/08/28/2021hsnumock2/s2.png" class>
+
+<img src="/2021/08/28/2021hsnumock2/s3.png" class>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/competitive-programming/" rel="tag"># competitive programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/26/2021hsnumock1/" rel="prev" title="2021 附中暑期培訓模擬競賽 I">
+      <i class="fa fa-chevron-left"></i> 2021 附中暑期培訓模擬競賽 I
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/23/2021ckcon1/" rel="next" title="2021 建中校隊初選 Virtual">
+      2021 建中校隊初選 Virtual <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pA"><span class="nav-number">1.1.</span> <span class="nav-text">pA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pB"><span class="nav-number">1.2.</span> <span class="nav-text">pB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pC"><span class="nav-number">1.3.</span> <span class="nav-text">pC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pD"><span class="nav-number">1.4.</span> <span class="nav-text">pD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pE"><span class="nav-number">1.5.</span> <span class="nav-text">pE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C%E6%AA%A2%E8%A8%8E"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E6%AA%A2%E8%A8%8E"><span class="nav-number">5.</span> <span class="nav-text">總檢討</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%BD%E5%89%8D"><span class="nav-number">5.1.</span> <span class="nav-text">賽前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E4%BF%AE%E6%AD%A3"><span class="nav-number">5.2.</span> <span class="nav-text">策略修正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%BD%E4%B8%AD%E5%BF%83%E6%85%8B%E8%AA%BF%E6%95%B4"><span class="nav-number">5.3.</span> <span class="nav-text">賽中心態調整</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E7%94%A8%E6%96%87%E7%AB%A0"><span class="nav-number">6.</span> <span class="nav-text">實用文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Gino"
+      src="https://i.imgur.com/Sg8WRVu.png">
+  <p class="site-author-name" itemprop="name">Gino</p>
+  <div class="site-description" itemprop="description">雜談／日記／競賽心得／教學文</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Penguin-71630" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Penguin-71630" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gino</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
