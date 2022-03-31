@@ -253,30 +253,34 @@
     font-weight: bold;
 }
 </style>
-
 <span id="more"></span>
-
-<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><h2 id="pA"><a href="#pA" class="headerlink" title="pA"></a>pA</h2><p><strong>直播循環</strong><br>一個直播循環是由 $s$ 天的直播時段和 $r$ 天的休息時間構成。<br>現有位直播主要進行 $n$ 個遊戲的直播，第 $i$ 個遊戲需在某個循環的第 $a_i$ 天遊玩。且每個遊戲直播之間須間隔至少 $r$ 天的休息日。<br>求最少需幾個直播循環才能至少玩過所有遊戲一遍，並輸出每個遊戲須在第幾個循環進行直播（輸入任一種安排方式）。</p>
+<h1>題目</h1>
+<h2 id="pA">pA</h2>
+<p><strong>直播循環</strong><br>
+一個直播循環是由 $s$ 天的直播時段和 $r$ 天的休息時間構成。<br>
+現有位直播主要進行 $n$ 個遊戲的直播，第 $i$ 個遊戲需在某個循環的第 $a_i$ 天遊玩。且每個遊戲直播之間須間隔至少 $r$ 天的休息日。<br>
+求最少需幾個直播循環才能至少玩過所有遊戲一遍，並輸出每個遊戲須在第幾個循環進行直播（輸入任一種安排方式）。</p>
 <p>$n \leq 2 \times 10^5$</p>
 <p>$0 \leq r \leq s \leq 10^9$</p>
 <p><strong>Subtask</strong></p>
 <img src="/2021/08/26/2021hsnumock1/subtaska.png" class>
-
-
-<h2 id="pB"><a href="#pB" class="headerlink" title="pB"></a>pB</h2><p><strong>兔田彩券</strong><br>給定 $m$ 個數對 $(a_i, b_i), a_i \neq b_i$，每個數對的數字皆 $\leq n$。<br>接著有 $q$ 筆詢問，每筆詢問給定 $(l, r, s, t)$，求有多少數對 $(a_i, b_i)$ 滿足 $(l \leq a_i \leq r \land s \leq b_i \leq t)$ 或 $(l \leq b_i \leq r \land s \leq a_i \leq t)$。</p>
+<h2 id="pB">pB</h2>
+<p><strong>兔田彩券</strong><br>
+給定 $m$ 個數對 $(a_i, b_i), a_i \neq b_i$，每個數對的數字皆 $\leq n$。<br>
+接著有 $q$ 筆詢問，每筆詢問給定 $(l, r, s, t)$，求有多少數對 $(a_i, b_i)$ 滿足 $(l \leq a_i \leq r \land s \leq b_i \leq t)$ 或 $(l \leq b_i \leq r \land s \leq a_i \leq t)$。</p>
 <p>$1 \leq n \leq 2000$</p>
 <p>$1 \leq m, q \leq 2 \times 10^5$</p>
 <p><strong>Subtask</strong></p>
 <img src="/2021/08/26/2021hsnumock1/subtaskb.png" class>
-
-
-<h2 id="pC"><a href="#pC" class="headerlink" title="pC"></a>pC</h2><p><strong>魔法師測驗</strong><br>有一棵 $n$ 個節點的樹，每個節點有權重 $a_i$，求最長的路徑滿足路徑上的節點權重 $gcd \neq 1$，輸出該路徑的節點數。</p>
+<h2 id="pC">pC</h2>
+<p><strong>魔法師測驗</strong><br>
+有一棵 $n$ 個節點的樹，每個節點有權重 $a_i$，求最長的路徑滿足路徑上的節點權重 $gcd \neq 1$，輸出該路徑的節點數。</p>
 <p>$1 \leq n, a_i\leq 2 \times 10^5$</p>
 <p><strong>Subtask</strong></p>
 <img src="/2021/08/26/2021hsnumock1/subtaskc.png" class>
-
-
-<h2 id="pD"><a href="#pD" class="headerlink" title="pD"></a>pD</h2><p><strong>刷怪塔</strong><br>有 $T$ 筆測資，每筆測資有兩個數字 $a, b$。</p>
+<h2 id="pD">pD</h2>
+<p><strong>刷怪塔</strong><br>
+有 $T$ 筆測資，每筆測資有兩個數字 $a, b$。</p>
 <p>令 $s$ 初始為 $1$，定義一次操作如下：</p>
 <ol>
 <li>選擇 $a, b$ 數字較大者（若相同則選擇 $a$），並將該數字減去 $s$。</li>
@@ -288,20 +292,18 @@
 <p>$0 \leq a, b \leq 10^{18}$</p>
 <p><strong>Subtask</strong></p>
 <img src="/2021/08/26/2021hsnumock1/subtaskd.png" class>
-
-
-<h2 id="pE"><a href="#pE" class="headerlink" title="pE"></a>pE</h2><p><strong>時空旅人之爭</strong><br>有一棵 $n$ 個節點的樹，自第 $0$ 秒開始，複製人便佔領節點 $1$，並且每隔 $2$ 秒往相鄰節點擴散。</p>
+<h2 id="pE">pE</h2>
+<p><strong>時空旅人之爭</strong><br>
+有一棵 $n$ 個節點的樹，自第 $0$ 秒開始，複製人便佔領節點 $1$，並且每隔 $2$ 秒往相鄰節點擴散。</p>
 <p>接著有 $q$ 筆詢問 $(s, t)$，代表從節點 $s$ 開始經過最短路徑到達 $t$。時間從 $0$ 秒開始計算，每前往下一個節點需要 $1$ 秒。求這段路程中有多少節點已經被複製人佔領。</p>
 <p>$1 \leq n, q \leq 2 \times 10^5$</p>
 <p><strong>Subtask</strong></p>
 <img src="/2021/08/26/2021hsnumock1/subtaske.png" class>
-
-
-<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><p><strong>Score：135／Rank：3rd</strong></p>
+<h1>比賽結果</h1>
+<p><strong>Score：135／Rank：3rd</strong></p>
 <img src="/2021/08/26/2021hsnumock1/result.png" class>
-
-
-<h1 id="比賽過程"><a href="#比賽過程" class="headerlink" title="比賽過程"></a>比賽過程</h1><p>開賽先下載所有題本，大概先花了15分鐘閱讀題本。</p>
+<h1>比賽過程</h1>
+<p>開賽先下載所有題本，大概先花了15分鐘閱讀題本。</p>
 <p>當時的難度排序：<code>pA &lt; pE &lt; pC &lt; pD &lt; pB</code></p>
 <p>pA 在紙上畫了一些圖後，馬上就想到 greedy+STL 就好了。</p>
 <p>感覺這是最簡單的題目，沒什麼猶豫就寫下去了，刻模板 10 分鐘，但寫到後面才發現完了，我連 STL 的操作都不太熟悉，於是把 multiset 砍掉換成 map 才終於刻完。丟上去一發 AC。</p>
@@ -322,20 +324,23 @@
 <p>心中默念一聲幹之後回去好好看子題，結果我連一條鍊的測資都沒過。於是隨便生了一個鍊的測資，結果又找到更多問題，但我沒有打算重寫，反而是在那複雜的 code 上面又多加了更多的 if。看似解決了又丟上去。</p>
 <p><span class="lv1"><strong>02:16 pE 0分</strong></span></p>
 <p>糟糕，心態越來越不對，已經砸了 50 分鐘在這題了但我沒有收手，給自己停損點但都是給假的。一直很懊惱很不捨，寫了那麼長的 code 但一分也沒有，抱著「<strong>只要再修一下可能就可以 AC 了，現在放棄的話前面那一個小時就全都白費</strong>」這種斷不開的糟糕想法一直燒到比賽剩 20 分鐘。</p>
-<p><span class="lv1"><strong>02:27 pE 0分</strong></span><br><span class="lv1"><strong>02:37 pE 0分</strong></span></p>
+<p><span class="lv1"><strong>02:27 pE 0分</strong></span><br>
+<span class="lv1"><strong>02:37 pE 0分</strong></span></p>
 <p>這時候頭已經很脹痛，腦中思緒全部打結，心態上又一直很自責、懊悔，暴躁到敲了幾下鍵盤後去上廁所，但心情還沒完全平復就又回到電腦桌前。</p>
 <p>這時候才開始寫 pC 的暴力分，順便加個唬爛剪枝（按照質因數出現的次數排序做樹直徑）。質數篩 + 質因數分解 + 樹直徑 DP 刻完大概剩 5 分鐘，結果測了範測，完了，是爛的。最後就盯著 code 盯到結束前 30 秒，很情感地把 code 丟了上去，想當然的一分都沒有。</p>
 <p><span class="lv1"><strong>02:59 pC 0分</strong></span></p>
-<h1 id="賽後檢討"><a href="#賽後檢討" class="headerlink" title="賽後檢討"></a>賽後檢討</h1><p>耍智障的地方真的太多了 &#x3D; &#x3D;”</p>
+<h1>賽後檢討</h1>
+<p>耍智障的地方真的太多了 = =&quot;</p>
 <ol>
 <li>pA 居然刻到後面才發現不能用 multiset 而要用 map。</li>
 <li>pB 耍笨，套到二維平面上才發現只需要二維前綴和就行了，但我所有的思考過程全都在一維直線上，沒跳脫出來。</li>
-<li>pC 有兩個智障 bug。<ul>
+<li>pC 有兩個智障 bug。
+<ul>
 <li>我所有的 code 都是 1-based 的，但輸入數字的時候卻從 index 0 開始輸入。</li>
-<li>樹 DP 有一段 code <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (tag[u] == <span class="number">0</span>) &#123;</span><br><span class="line">    dp[u] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- 關鍵在於不能馬上 return 而是要繼續 dfs，真是智障。</li>
+<li>樹 DP 有一段 code</li>
 </ul>
-</li>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (tag[u] == <span class="number">0</span>) &#123;</span><br><span class="line">    dp[u] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+關鍵在於不能馬上 return 而是要繼續 dfs，真是智障。</li>
 <li>pE 爛在倍增二分搜，結果只是我沒有注意到我的寫法會讓指針跳到 LCA 上面。</li>
 </ol>
 
@@ -421,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pA"><span class="nav-number">1.1.</span> <span class="nav-text">pA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pB"><span class="nav-number">1.2.</span> <span class="nav-text">pB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pC"><span class="nav-number">1.3.</span> <span class="nav-text">pC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pD"><span class="nav-number">1.4.</span> <span class="nav-text">pD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pE"><span class="nav-number">1.5.</span> <span class="nav-text">pE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C%E6%AA%A2%E8%A8%8E"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pA"><span class="nav-number">1.1.</span> <span class="nav-text">pA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pB"><span class="nav-number">1.2.</span> <span class="nav-text">pB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pC"><span class="nav-number">1.3.</span> <span class="nav-text">pC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pD"><span class="nav-number">1.4.</span> <span class="nav-text">pD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pE"><span class="nav-number">1.5.</span> <span class="nav-text">pE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

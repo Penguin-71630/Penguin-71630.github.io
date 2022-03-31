@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content=".red {   color: #c2081a; }     前言本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。">
+  <meta name="description" content=".red {   color: #c2081a; }  前言 本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="電資圈接力文—隨機大法好">
 <meta property="og:url" content="http://penguin-71630.github.io/2021/07/01/random/index.html">
 <meta property="og:site_name" content="Gino&#39;s Blog">
-<meta property="og:description" content=".red {   color: #c2081a; }     前言本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。">
+<meta property="og:description" content=".red {   color: #c2081a; }  前言 本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-01T14:24:19.000Z">
 <meta property="article:modified_time" content="2022-03-29T15:07:29.619Z">
@@ -233,75 +233,61 @@
   color: #c2081a;
 }
 </style>
-
-
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。</p>
+<h1>前言</h1>
+<p>本來想寫連通分量跟 tarjan 的介紹，但我發現可能會寫得又臭又長，加上我不會畫畫，於是就決定來介紹更酷的東西。</p>
 <span id="more"></span>
-
-<p>第一篇教學文 :D<br>廢話不多說，直接進入正文</p>
+<p>第一篇教學文 :D<br>
+廢話不多說，直接進入正文</p>
 <br>
-
-
-<h1 id="先備知識-—-如何產生亂數"><a href="#先備知識-—-如何產生亂數" class="headerlink" title="先備知識 — 如何產生亂數"></a>先備知識 — 如何產生亂數</h1><p><strong>懶人包：已經會的話可以直接跳過這一部分。</strong></p>
+<h1>先備知識 — 如何產生亂數</h1>
+<p><strong>懶人包：已經會的話可以直接跳過這一部分。</strong></p>
 <blockquote>
 <p>參考資料：<a target="_blank" rel="noopener" href="https://blog.gtwang.org/programming/cpp-random-number-generator-and-probability-distribution-tutorial/">https://blog.gtwang.org/programming/cpp-random-number-generator-and-probability-distribution-tutorial/</a></p>
 </blockquote>
 <p>要有一個可以產生亂數的工具，首先必須備齊三大工具：</p>
-<h2 id="1-亂數種子（Random-Seed）"><a href="#1-亂數種子（Random-Seed）" class="headerlink" title="1. 亂數種子（Random Seed）"></a>1. 亂數種子（Random Seed）</h2><details>
+<h2 id="1-亂數種子（Random-Seed）">1. 亂數種子（Random Seed）</h2>
+<details>
   <summary>點我</summary>
-  
-<p>  亂數的生成幾乎都是用一些複雜的數學公式（偽隨機），而種子的功能就是做為這些公式的某些<strong>初始參數</strong>。</p>
-<p>  常用的種子是時間資訊，取用方法有 <code>time(NULL)</code> 或是 <code>chrono::steady_clock::now().time_since_epoch().count()</code>。</p>
-<p>  另外也可以用 <code>std::random_device</code>，這東西會抓系統的一些隨機資訊來產生亂數，詳細介紹可以看上面那篇參考資料。</p>
+<p>亂數的生成幾乎都是用一些複雜的數學公式（偽隨機），而種子的功能就是做為這些公式的某些<strong>初始參數</strong>。</p>
+<p>常用的種子是時間資訊，取用方法有 <code>time(NULL)</code> 或是 <code>chrono::steady_clock::now().time_since_epoch().count()</code>。</p>
+<p>另外也可以用 <code>std::random_device</code>，這東西會抓系統的一些隨機資訊來產生亂數，詳細介紹可以看上面那篇參考資料。</p>
 </details>
-
-
-
-
-<h2 id="2-引擎（Generator）"><a href="#2-引擎（Generator）" class="headerlink" title="2. 引擎（Generator）"></a>2. 引擎（Generator）</h2><details>
+<h2 id="2-引擎（Generator）">2. 引擎（Generator）</h2>
+<details>
   <summary>點我</summary>
-
-<p>  隨機算法的核心，把種子餵給他後，就可以幫你產生一連串的亂數。</p>
-<p>  個人最常用的是 <code>std::mt19937</code>，背後的演算法是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A2%85%E6%A3%AE%E6%97%8B%E8%BD%AC%E7%AE%97%E6%B3%95">梅森旋轉演算法</a>。</p>
-<p>  宣告一個引擎的語法：<code>引擎 名稱(種子);</code><br>  例如：<code>std::mt19937 gen( time(NULL) );</code></p>
-<p>  其他引擎可以參考上面那篇文。</p>
+<p>隨機算法的核心，把種子餵給他後，就可以幫你產生一連串的亂數。</p>
+<p>個人最常用的是 <code>std::mt19937</code>，背後的演算法是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A2%85%E6%A3%AE%E6%97%8B%E8%BD%AC%E7%AE%97%E6%B3%95">梅森旋轉演算法</a>。</p>
+<p>宣告一個引擎的語法：<code>引擎 名稱(種子);</code><br>
+例如：<code>std::mt19937 gen( time(NULL) );</code></p>
+<p>其他引擎可以參考上面那篇文。</p>
 </details>
-
-
-<h2 id="3-數值分布（Distribution）"><a href="#3-數值分布（Distribution）" class="headerlink" title="3. 數值分布（Distribution）"></a>3. 數值分布（Distribution）</h2><details>
+<h2 id="3-數值分布（Distribution）">3. 數值分布（Distribution）</h2>
+<details>
   <summary>點我</summary>
-
-<p>  分布的功能就是將引擎產生的數值，依照我們的需求轉換為各種機率分布，例如均勻分布、常態分布、二項分布等等。</p>
-<p>  基本上如果沒有特別的需求，使用 <code>uniform distribution</code> （均勻分布）就夠了。</p>
-<p>  如果是使用整數，語法是 <code>std::uniform_int_distribution&lt;int&gt; 分布名稱(最小值, 最大值)</code>。<br>  如果是使用小數，語法是 <code>std::uniform_real_distribution&lt;double&gt; 分布名稱(最小值, 最大值)</code>。</p>
-<p>  舉例：<code>std::uniform_int_distribution&lt;int&gt; dis(0, 100);</code><br>  而產生一個亂數的語法：<code>分布(引擎)</code></p>
-<p>  其他數值分布可以參考上面的文章。</p>
+<p>分布的功能就是將引擎產生的數值，依照我們的需求轉換為各種機率分布，例如均勻分布、常態分布、二項分布等等。</p>
+<p>基本上如果沒有特別的需求，使用 <code>uniform distribution</code> （均勻分布）就夠了。</p>
+<p>如果是使用整數，語法是 <code>std::uniform_int_distribution&lt;int&gt; 分布名稱(最小值, 最大值)</code>。<br>
+如果是使用小數，語法是 <code>std::uniform_real_distribution&lt;double&gt; 分布名稱(最小值, 最大值)</code>。</p>
+<p>舉例：<code>std::uniform_int_distribution&lt;int&gt; dis(0, 100);</code><br>
+而產生一個亂數的語法：<code>分布(引擎)</code></p>
+<p>其他數值分布可以參考上面的文章。</p>
 </details>
-
-
-
 <details>
   <summary>以下示範如何隨機產生 100 個介於 0~10000 的整數：</summary>
-
   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">mt19937 <span class="title">gen</span><span class="params">(chrono::steady_clock::now().time_since_epoch().count())</span></span>;</span><br><span class="line">    <span class="function">uniform_int_distribution&lt;<span class="type">int</span>&gt; <span class="title">dis</span><span class="params">(<span class="number">0</span>, <span class="number">10000</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="built_in">dis</span>(gen) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </details>
-
-
 <br>
-
-
-<h1 id="暖身：大數運算"><a href="#暖身：大數運算" class="headerlink" title="暖身：大數運算"></a>暖身：大數運算</h1><blockquote>
+<h1>暖身：大數運算</h1>
+<blockquote>
 <p><strong>題目來源：改編自 2020 資訊之芽團體賽</strong></p>
-<p>給一個正整數 $N$，令 $M &#x3D; N \ \text{mod}\ 987654321$，請計算 $M^N \ \text{mod}\ 2$ 的結果。</p>
+<p>給一個正整數 $N$，令 $M = N \ \text{mod}\ 987654321$，請計算 $M^N \ \text{mod}\ 2$ 的結果。</p>
 <p>$N \leq 10^{10^5}$，測試資料共 $\lfloor{\pi}\rfloor$ 筆。</p>
 </blockquote>
 <p>完蛋，看起來好難喔，怎麼辦 QQ？</p>
 <p>別忘了，解一道題目最重要的步驟便是好好觀察題目的性質。</p>
-<p>注意到 $\lfloor{\pi}\rfloor &#x3D; 3$，並且答案只有 $0$ 跟 $1$ 兩種。</p>
+<p>注意到 $\lfloor{\pi}\rfloor = 3$，並且答案只有 $0$ 跟 $1$ 兩種。</p>
 <p>因此我們可以不管 $N$，直接隨機決定要輸出 $0$ 還是 $1$ 就好。</p>
-<p>這個做法的 AC 機率 $&#x3D; (\frac{1}{2})^3 &#x3D; \frac{1}{8}$。期望上只要丟 8 次就會過了，夠有緣的甚至一發爽爽 AC。</p>
+<p>這個做法的 AC 機率 $= (\frac{1}{2})^3 = \frac{1}{8}$。期望上只要丟 8 次就會過了，夠有緣的甚至一發爽爽 AC。</p>
 <blockquote>
 <p><strong>類題練習</strong></p>
 <p>延續例題，只是測試資料從 $\lfloor{\pi}\rfloor$ 筆變成 $\lfloor{\text{🥧}}\rfloor$ 筆。</p>
@@ -319,24 +305,21 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
 </details>
 </blockquote>
 <br>
-
-<h1 id="不那麼隨機的隨機"><a href="#不那麼隨機的隨機" class="headerlink" title="不那麼隨機的隨機"></a>不那麼隨機的隨機</h1><blockquote>
+<h1>不那麼隨機的隨機</h1>
+<blockquote>
 <p><strong>先備知識：前綴和</strong></p>
 </blockquote>
 <details>
   <summary>先看簡單版的題目：</summary>
-
 <blockquote>
 <p>輸入一個長度為 $N$ 的陣列 $A$，接下來有 $Q$ 筆詢問。</p>
 <p>第 $i$ 筆詢問有兩個數字 $L_i, R_i$，問<strong>每種數字</strong>在區間 $A[L_i] \sim A[R_i]$ 出現次數是否恰好為 $3$ 的倍數？</p>
 <p>對於每筆詢問，輸出一行 YES 或 NO。</p>
-<p>$N \leq 10^5, Q &#x3D; 3,$ 測資只有一筆。</p>
+<p>$N \leq 10^5, Q = 3,$ 測資只有一筆。</p>
 <p>$1 \leq A_i \leq N$</p>
 </blockquote>
-<p>  首先先盯著這個問題，然後會發現一個關鍵的性質 — $Q &#x3D; 3$，且答案只有兩種。類似剛才所學到的作法，枚舉這三筆詢問要輸出的是 YES 或 NO，  最多只要丟 8 次就會過了。不要跟我說什麼 O(NQ) 暴力統計出現次數就可以解決我不聽我不聽我不聽</p>
+<p>首先先盯著這個問題，然後會發現一個關鍵的性質 — $Q = 3$，且答案只有兩種。類似剛才所學到的作法，枚舉這三筆詢問要輸出的是 YES 或 NO，  最多只要丟 8 次就會過了。不要跟我說什麼 O(NQ) 暴力統計出現次數就可以解決我不聽我不聽我不聽</p>
 </details>
-
-
 <p>接著是加強版：</p>
 <blockquote>
 <p>輸入一個長度為 $N$ 的陣列 $A$，接下來有 $Q$ 筆詢問。</p>
@@ -352,67 +335,67 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
 <table>
 <thead>
 <tr>
-<th align="center">陣列$A$</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">1</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">2</th>
+<th style="text-align:center">陣列$A$</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">2</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">陣列$B$</td>
-<td align="center">$x$</td>
-<td align="center">$y$</td>
-<td align="center">$x$</td>
-<td align="center">$-2x$</td>
-<td align="center">$y$</td>
-<td align="center">$x$</td>
-<td align="center">$-2y$</td>
-<td align="center">$y$</td>
+<tbody>
+<tr>
+<td style="text-align:center">陣列$B$</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$y$</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$-2x$</td>
+<td style="text-align:center">$y$</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$-2y$</td>
+<td style="text-align:center">$y$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>概念就是，若數字為 $a$，其對應到的數字為 $m_a$，若該數字由左往右出現第 「$3$ 的倍數」次，則它在 $B$ 陣列中的值就要被設為 $-2 m_a$，反之則設為 $m_a$。</strong></p>
 <p>有了 $B$ 陣列，該如何判斷答案呢？</p>
 <p>詢問的時候，若每種數字在區間 $[L_i, R_i]$ 出現次數皆為 3 的倍數，</p>
 <details>
   <summary>則代表</summary>
-
-<p>  $B[L_i] + B[L_i + 1] + … + B[R_i] &#x3D; 0$</p>
+<p>$B[L_i] + B[L_i + 1] + … + B[R_i] = 0$</p>
 </details>
-
 <p>這時就輸出 YES，否則輸出 NO。</p>
 <p>而只要套用<strong>前綴和</strong>的技巧，$O(1)$ 回答 $B[L_i] + … + B[R_i]$，就可在 $O(N + Q)$ 的時間內解決這題。</p>
-<p>然而這作法還是有問題，因為 $B[L_i] + … + B[R_i] &#x3D; 0$ 的時候答案不一定是 YES。</p>
+<p>然而這作法還是有問題，因為 $B[L_i] + … + B[R_i] = 0$ 的時候答案不一定是 YES。</p>
 <details>
   <summary>舉例</summary>
-
 <blockquote>
 <table>
 <thead>
 <tr>
-<th align="center">陣列$A$</th>
-<th align="center">1</th>
-<th align="center">1</th>
-<th align="center">1</th>
-<th align="center">2</th>
+<th style="text-align:center">陣列$A$</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">陣列$B$</td>
-<td align="center">$x$</td>
-<td align="center">$x$</td>
-<td align="center">$-2x$</td>
-<td align="center">$y$</td>
+<tbody>
+<tr>
+<td style="text-align:center">陣列$B$</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$-2x$</td>
+<td style="text-align:center">$y$</td>
 </tr>
-</tbody></table>
-<p>讓 $x &#x3D; 1, y &#x3D; 2$，詢問 $[3, 4]$ 便會判斷錯誤。</p>
+</tbody>
+</table>
+<p>讓 $x = 1, y = 2$，詢問 $[3, 4]$ 便會判斷錯誤。</p>
 </blockquote>
 </details>
-
 <p>問題在於 $A$ 中每個數字的映射範圍不能太小，否則很容易就會發生判斷錯誤的情況。</p>
 <p>這時只要保證 $A$ 的每個數字隨機映射到的數字夠大、夠分散，例如隨機映射到 $[1, 10^9]$ 之間的數字，就有很高的機率能夠避開判斷失誤，穩穩 AC。</p>
 <blockquote>
@@ -420,8 +403,8 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
 <p>題目：<a target="_blank" rel="noopener" href="https://neoj.sprout.tw/problem/793/">資芽 OJ 793 — 想不到題目標題QQ</a></p>
 </blockquote>
 <br>
-
-<h1 id="我不會下標題，但這真的很有趣"><a href="#我不會下標題，但這真的很有趣" class="headerlink" title="我不會下標題，但這真的很有趣"></a>我不會下標題，但這真的很有趣</h1><blockquote>
+<h1>我不會下標題，但這真的很有趣</h1>
+<blockquote>
 <p><strong>先備知識：二分搜</strong></p>
 </blockquote>
 <blockquote>
@@ -435,73 +418,69 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
   <summary>提示</summary>
   如果我在一個區間隨機戳一個數字的話...
 </details>
-
-
 <details>
   <summary>溫馨提醒</summary>
   建議直接點開以下提示，因為我本人想了一年多才在偶然獲得的提示下想到這題的關鍵。
-
-<p>  <strong>對，整整一年。</strong></p>
+<p><strong>對，整整一年。</strong></p>
 </details>
-
-
 <details>
   <summary>破題關鍵</summary>
   如果我在一個區間隨機戳一個數字的話，那我戳中絕對眾數的機率會是 $\frac{1}{2}$。
 </details>
-
-
 <details>
   <summary>完整做法</summary>
-
-<p>  那我們不妨在這個區間內隨機選 $30$ 個數字，然後一一檢查它們是不是絕對眾數，而連續 $30$ 次都戳不中絕對眾數的機率略小於 $10^{-9}$，基本上可以忽略這微小的機率，假裝一定會戳中。</p>
-<p>  因此單筆詢問的正確率為 $1 - 10^{-9}$，連續 $Q$ 筆詢問都正確的機率為 $(1 - 10^{-9})^Q$，若 $Q &#x3D; 5 \times 10^5$，則 AC 的機率約為 $99.95%$，幾乎可以一發 AC，一次不過第二次也會過。<strong>如果有人可以連續兩次都 WA 的，請截圖 + 傳 code 私訊我，請你吃三碗拉麵</strong>。</p>
-<p>  現在還有一個問題要解決：要怎麼快速知道一個數字在某個區間內是不是絕對眾數？或者，要怎麼快速知道一個數字在某個區間內<strong>出現幾次</strong>？</p>
-<p>  有個比較直覺的作法，先開一個大小 $5 \times 10^5$ 的 vector 陣列 $pos$，$pos[a]$ 存 $a$ 這個數字在原序列中依序出現的位置。</p>
+<p>那我們不妨在這個區間內隨機選 $30$ 個數字，然後一一檢查它們是不是絕對眾數，而連續 $30$ 次都戳不中絕對眾數的機率略小於 $10^{-9}$，基本上可以忽略這微小的機率，假裝一定會戳中。</p>
+<p>因此單筆詢問的正確率為 $1 - 10^{-9}$，連續 $Q$ 筆詢問都正確的機率為 $(1 - 10^{-9})^Q$，若 $Q = 5 \times 10^5$，則 AC 的機率約為 $99.95%$，幾乎可以一發 AC，一次不過第二次也會過。<strong>如果有人可以連續兩次都 WA 的，請截圖 + 傳 code 私訊我，請你吃三碗拉麵</strong>。</p>
+<p>現在還有一個問題要解決：要怎麼快速知道一個數字在某個區間內是不是絕對眾數？或者，要怎麼快速知道一個數字在某個區間內<strong>出現幾次</strong>？</p>
+<p>有個比較直覺的作法，先開一個大小 $5 \times 10^5$ 的 vector 陣列 $pos$，$pos[a]$ 存 $a$ 這個數字在原序列中依序出現的位置。</p>
 <blockquote>
 <p><strong>舉例如下：</strong></p>
 <table>
 <thead>
 <tr>
-<th align="center">$i$</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-<th align="center">6</th>
+<th style="text-align:center">$i$</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$a_i$</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">2</td>
+<tbody>
+<tr>
+<td style="text-align:center">$a_i$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>則 pos 陣列如下：</strong></p>
 <table>
 <thead>
 <tr>
-<th align="center">$a$</th>
-<th align="left">$pos[a]$</th>
+<th style="text-align:center">$a$</th>
+<th style="text-align:left">$pos[a]$</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="left">1, 3, 4</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">1, 3, 4</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">2, 5, 6</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">2, 5, 6</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </blockquote>
-<p>  要詢問一個數字 $a$ 的在區間 $[l, r]$ 的出現次數，可以換個角度，改成詢問 <strong>$pos[a]$ 中有幾個數字介於 $l \sim r$ 之間</strong>。</p>
-<p>  由於 $pos[a]$ 嚴格遞增，因此對 $pos[a]$ 做二分搜，搜尋 <strong>「第一個大於等於 $l$ 的數字」的位置</strong>，以及 <strong>「第一個大於 $r$ 的數字」的位置</strong>。兩個搜到的答案相減，就是 $a$ 在該區間出現的次數。</p>
+<p>要詢問一個數字 $a$ 的在區間 $[l, r]$ 的出現次數，可以換個角度，改成詢問 <strong>$pos[a]$ 中有幾個數字介於 $l \sim r$ 之間</strong>。</p>
+<p>由於 $pos[a]$ 嚴格遞增，因此對 $pos[a]$ 做二分搜，搜尋 <strong>「第一個大於等於 $l$ 的數字」的位置</strong>，以及 <strong>「第一個大於 $r$ 的數字」的位置</strong>。兩個搜到的答案相減，就是 $a$ 在該區間出現的次數。</p>
 <blockquote>
 <p><strong>舉例如下：</strong></p>
 <p><strong>沿用上例的 pos 陣列，假設詢問 1 在區間 $[2, 5]$ 出現幾次，</strong></p>
@@ -509,32 +488,32 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
 <table>
 <thead>
 <tr>
-<th align="center">$a$</th>
-<th align="left">$pos[a]$</th>
+<th style="text-align:center">$a$</th>
+<th style="text-align:left">$pos[a]$</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>1</strong></td>
-<td align="left"><strong>1, <span class="red">3, 4</span></strong></td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:left"><strong>1, <span class="red">3, 4</span></strong></td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">2, 5, 6</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">2, 5, 6</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>這件事情可以用二分搜做到。</strong></p>
 <p><strong>懶的寫二分搜的話可以用 lower_bound 函式，我是怪人我每次二分搜都還是會自己刻。</strong></p>
 </blockquote>
 </details>
-
-
-<p>這個做法的總複雜度為 $O(N + k \ Q \log N)$，$k$ 是每次詢問挑的數字個數（上面的作法 $k &#x3D; 30$）。</p>
+<p>這個做法的總複雜度為 $O(N + k \ Q \log N)$，$k$ 是每次詢問挑的數字個數（上面的作法 $k = 30$）。</p>
 <p>如果會 TLE 的話可以把 $k$ 改小一點，會 WA 的話就改大一點。</p>
 <details>
   <summary>另解</summary>
-
-<p>  這題還有另外一個非隨機做法，不僅速度更快（經實測時間是隨機的一半），而且正確率 $100 %$，有興趣的可以上網搜尋「<strong>戰鬥線段樹</strong>」，也是一個超酷的作法。</p>
-<p>  或是參考台中一中 x 資奧二階大佬 <strong>abc864197532</strong> 的文章：<br>  <a target="_blank" rel="noopener" href="https://abc864197532.github.io/2021/02/07/tioj-2140/">https://abc864197532.github.io/2021/02/07/tioj-2140/</a></p>
+<p>這題還有另外一個非隨機做法，不僅速度更快（經實測時間是隨機的一半），而且正確率 $100 %$，有興趣的可以上網搜尋「<strong>戰鬥線段樹</strong>」，也是一個超酷的作法。</p>
+<p>或是參考台中一中 x 資奧二階大佬 <strong>abc864197532</strong> 的文章：<br>
+<a target="_blank" rel="noopener" href="https://abc864197532.github.io/2021/02/07/tioj-2140/">https://abc864197532.github.io/2021/02/07/tioj-2140/</a></p>
 </details>
 
     </div>
@@ -616,7 +595,7 @@ $\lfloor{\text{🥧}}\rfloor = 8$，和例題的作法一樣，有 $\frac{1}{256
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%88%E5%82%99%E7%9F%A5%E8%AD%98-%E2%80%94-%E5%A6%82%E4%BD%95%E7%94%A2%E7%94%9F%E4%BA%82%E6%95%B8"><span class="nav-number">2.</span> <span class="nav-text">先備知識 — 如何產生亂數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%82%E6%95%B8%E7%A8%AE%E5%AD%90%EF%BC%88Random-Seed%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">1. 亂數種子（Random Seed）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%95%E6%93%8E%EF%BC%88Generator%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">2. 引擎（Generator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B8%E5%80%BC%E5%88%86%E5%B8%83%EF%BC%88Distribution%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">3. 數值分布（Distribution）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9A%96%E8%BA%AB%EF%BC%9A%E5%A4%A7%E6%95%B8%E9%81%8B%E7%AE%97"><span class="nav-number">3.</span> <span class="nav-text">暖身：大數運算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E9%82%A3%E9%BA%BC%E9%9A%A8%E6%A9%9F%E7%9A%84%E9%9A%A8%E6%A9%9F"><span class="nav-number">4.</span> <span class="nav-text">不那麼隨機的隨機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%B8%8D%E6%9C%83%E4%B8%8B%E6%A8%99%E9%A1%8C%EF%BC%8C%E4%BD%86%E9%80%99%E7%9C%9F%E7%9A%84%E5%BE%88%E6%9C%89%E8%B6%A3"><span class="nav-number">5.</span> <span class="nav-text">我不會下標題，但這真的很有趣</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">先備知識 — 如何產生亂數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%82%E6%95%B8%E7%A8%AE%E5%AD%90%EF%BC%88Random-Seed%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">1. 亂數種子（Random Seed）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%95%E6%93%8E%EF%BC%88Generator%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">2. 引擎（Generator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B8%E5%80%BC%E5%88%86%E5%B8%83%EF%BC%88Distribution%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">3. 數值分布（Distribution）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">暖身：大數運算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">不那麼隨機的隨機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">我不會下標題，但這真的很有趣</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

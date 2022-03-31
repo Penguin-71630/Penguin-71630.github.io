@@ -248,25 +248,24 @@
     font-weight: bold;
 }
 </style>
-
-
-
-<h1 id="比賽資訊"><a href="#比賽資訊" class="headerlink" title="比賽資訊"></a>比賽資訊</h1><ul>
+<h1>比賽資訊</h1>
+<ul>
 <li><strong>題目</strong>：<a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/contests/79">https://tioj.ck.tp.edu.tw/contests/79</a></li>
 <li><strong>計分板</strong>：<a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/contests/79/dashboard">https://tioj.ck.tp.edu.tw/contests/79/dashboard</a></li>
 <li><strong>題解</strong>：<a target="_blank" rel="noopener" href="https://hackmd.io/@Dn7ABYK4QAyS02iuO5ydBw/Bk2_g_ozY#/">https://hackmd.io/@Dn7ABYK4QAyS02iuO5ydBw/Bk2_g_ozY#/</a></li>
 </ul>
 <span id="more"></span>
-
-<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><h2 id="Subtasks-Gained"><a href="#Subtasks-Gained" class="headerlink" title="Subtasks Gained"></a>Subtasks Gained</h2><p><strong>pA</strong> <span class="lv4">70</span>／<span class="lv4">30</span></p>
+<h1>比賽結果</h1>
+<h2 id="Subtasks-Gained">Subtasks Gained</h2>
+<p><strong>pA</strong> <span class="lv4">70</span>／<span class="lv4">30</span></p>
 <p><strong>pB</strong> <span class="lv4">15</span>／<span class="lv4">49</span>／<span class="lv4">36</span></p>
 <p><strong>pC</strong> <span class="lv4">16</span>／<span class="lv4">17</span>／<span class="lv4">18</span>／<span class="lv4">49</span></p>
 <p><strong>pD</strong> <span class="lv4">5</span>／<span class="lv4">8</span>／<span class="lv4">17</span>／<span class="lv4">21</span>／23／26</p>
 <p><strong>pE</strong> 10／16／29／45</p>
-<h2 id="Final-Score／Rank"><a href="#Final-Score／Rank" class="headerlink" title="Final Score／Rank"></a>Final Score／Rank</h2><img src="/2021/10/23/2021ckcon1/result.png" class>
-
-
-<h1 id="比賽過程"><a href="#比賽過程" class="headerlink" title="比賽過程"></a>比賽過程</h1><p>開場剛讀完 pA 馬上就開寫了，這次寫模板的速度有加快了。</p>
+<h2 id="Final-Score／Rank">Final Score／Rank</h2>
+<img src="/2021/10/23/2021ckcon1/result.png" class>
+<h1>比賽過程</h1>
+<p>開場剛讀完 pA 馬上就開寫了，這次寫模板的速度有加快了。</p>
 <p><span class="lv4">00:11 pA 100</span></p>
 <p>接下來是燒雞的開始，繼續讀完剩下的題目。</p>
 <p>pB 感覺有點 dp 但對狀態沒頭緒。</p>
@@ -275,23 +274,25 @@
 <p>pE 不會，甚至連子題一的想法完全沒有 QwQ。</p>
 <p><strong>00:25 Finished Reading</strong></p>
 <p>不想先寫 pC 所以跑去想 pB，先往 dp 的方向想，但… 好像沒有重複子結構可以轉移，想了 15 分鐘就放棄了 dp 的想法。</p>
-<p>然後注意到 $k \leq 3$ 感覺可以分 case 做事，於是一個一個解決。首先 $k &#x3D; 1$ 很 trivial，直接填相反 bit 就好。</p>
-<p>做 $k &#x3D; 2$ 時對問題做了一下轉換，假設朋友的序列為 $f_i$ ，構造出的序列為 $b$，若 $b_j &#x3D; 1$ 則將所有 $f_{i, j}$ 反轉，反之若 $b_j &#x3D; 0$ 則不用。問題等價於構造出 $b$ 使得 $min_{i&#x3D;1}^{k}(\sum_{j&#x3D;1}^{n} f_{i, j})$ 最大。</p>
+<p>然後注意到 $k \leq 3$ 感覺可以分 case 做事，於是一個一個解決。首先 $k = 1$ 很 trivial，直接填相反 bit 就好。</p>
+<p>做 $k = 2$ 時對問題做了一下轉換，假設朋友的序列為 $f_i$ ，構造出的序列為 $b$，若 $b_j = 1$ 則將所有 $f_{i, j}$ 反轉，反之若 $b_j = 0$ 則不用。問題等價於構造出 $b$ 使得 $min_{i=1}^{k}(\sum_{j=1}^{n} f_{i, j})$ 最大。</p>
 <p>這時候分開處理每個位置朋友的 bit 情況（有 $00, 01, 10, 11$ 共 4 種 mask），並處理該填 1 或 0。</p>
 <p>$00, 11$ 是顯然的，而一對 $01, 10$ 可以互相抵銷，抵銷後看誰還有剩，令剩下的 mask 為 $m$，剩餘數量為 $c$，這時候就把 $\lfloor \frac{c}{2} \rfloor$ 個 $m$ 反轉，這樣會是最好的，滿直觀的 greedy 但我不會證。</p>
-<p>想順著這個思路繼續推 $k &#x3D; 3$ 的 case（有 8 種 mask，轉成十進位分別對應 $0 \sim 7$），本來想要把 $1, 2, 4$ 先全部反轉成 $6, 5, 3$，但不確定這樣 greedy 是不是對的，於是決定先寫掉 $k \leq 2$ 的子題。</p>
+<p>想順著這個思路繼續推 $k = 3$ 的 case（有 8 種 mask，轉成十進位分別對應 $0 \sim 7$），本來想要把 $1, 2, 4$ 先全部反轉成 $6, 5, 3$，但不確定這樣 greedy 是不是對的，於是決定先寫掉 $k \leq 2$ 的子題。</p>
 <p><span class="lv1">01:03 pB 0</span></p>
 <p>變數不小心打反。</p>
 <p><span class="lv3">01:07 pB 49</span></p>
-<p>不放棄繼續推 $k &#x3D; 3$，這時候發現剛剛的想法是好的，反正反轉不需要代價，需要的話再反反轉就好。一樣把 $3, 5, 6$ 互相抵銷後會剩至多兩個 mask，這時候問題回歸到 $k \leq 2$。</p>
+<p>不放棄繼續推 $k = 3$，這時候發現剛剛的想法是好的，反正反轉不需要代價，需要的話再反反轉就好。一樣把 $3, 5, 6$ 互相抵銷後會剩至多兩個 mask，這時候問題回歸到 $k \leq 2$。</p>
 <p>確定沒問題後就把剛剛的想法打成 code，想到什麼步驟就打什麼，所以 code 滿醜的，幸運的是沒有 bug 或假解。</p>
 <p><span class="lv4">01:22 pB 100</span></p>
 <p>上廁所回來 pD、pE 依舊沒想法，於是開始寫 pC。</p>
-<p>注意到 $dis(s, t) &#x3D; dis(s, m) + dis(m, t)$，所以兩次 BFS 就行了。寫了 15 分鐘後丟上去。</p>
+<p>注意到 $dis(s, t) = dis(s, m) + dis(m, t)$，所以兩次 BFS 就行了。寫了 15 分鐘後丟上去。</p>
 <p><span class="lv1">01:43 pC 0</span></p>
 <p>三小，Segmentation Fault ? _?</p>
 <p>盯著 code 盯了很久，回去翻 verdict 才發現原來不是 RE 而是 MLE，但有些測資有過，所以不會是陣列開太大，但我還是很感性的把 int 改成 short。後續又改了一些小地方，想當然的全沒過。</p>
-<p><span class="lv1">01:49 pC 0</span><br><span class="lv1">01:50 pC 0</span><br><span class="lv1">01:54 pC 0</span></p>
+<p><span class="lv1">01:49 pC 0</span><br>
+<span class="lv1">01:50 pC 0</span><br>
+<span class="lv1">01:54 pC 0</span></p>
 <p>這時候開始有點不耐煩，想說這種水題怎麼連一分都沒有，然後又隨便改了個東西，丟上去：</p>
 <p><span class="lv2">01:56 pC 16</span></p>
 <p>蛤，為什麼突然多了 16 分，而且有些測資變成了 TLE？</p>
@@ -313,19 +314,21 @@
 <p>回來 vir 的時候，決定先寫有完整想法的 21 分。</p>
 <p><span class="lv2">02:45 pD 26</span></p>
 <p>陸續把 8 分、17 分撈掉。</p>
-<p><span class="lv3">02:52 pD 43</span><br><span class="lv3">02:55 pD 51</span></p>
+<p><span class="lv3">02:52 pD 43</span><br>
+<span class="lv3">02:55 pD 51</span></p>
 <p>剩 5 分鐘沒做事，比賽結束。</p>
 <blockquote>
-<p><strong>Score: 351&#x2F;500, Rk: 4</strong></p>
+<p><strong>Score: 351/500, Rk: 4</strong></p>
 </blockquote>
-<h1 id="賽後檢討"><a href="#賽後檢討" class="headerlink" title="賽後檢討"></a>賽後檢討</h1><ol>
+<h1>賽後檢討</h1>
+<ol>
 <li>難度排錯，應該先寫 pC 再寫 pB。</li>
 <li>沒注意到花了這麼多時間在 pB，竟然寫了一個小時，但我真的對這種題型很不熟悉，所以應該無解 QwQ。</li>
-<li><span class="lv1">智障 bug：&#x3D;&#x3D; 打成 &#x3D;</span></li>
+<li><span class="lv1">智障 bug：== 打成 =</span></li>
 <li>debug 的時候不要做一些無謂的事，不只找不到 bug 還會產生「debug 那麼久還是找不到問題」的錯覺，<strong>事實上那不叫 debug，只是浪費時間</strong>。</li>
 <li>debug 時忘記先 check <strong>常犯智障錯誤的 list</strong>，有 check 的話就不會浪費了 25 分鐘。</li>
 <li>還以為 pE 要用什麼難度破表的大科技，結果想出關鍵步驟後竟然只需要二分搜，這題的思維「<strong>枚舉一個固定的東西</strong>」以前就見過但很不熟悉，結果這題沒看出來 QQ。</li>
-<li>pD 只差在觀察出<strong>因數個數不會太多</strong>（<strong>大概 $n^{1&#x2F;3}$ 個</strong>，但我真的不知道有那麼少 QQ），所以可以值域壓縮後做 DP，可惜。</li>
+<li>pD 只差在觀察出<strong>因數個數不會太多</strong>（<strong>大概 $n^{1/3}$ 個</strong>，但我真的不知道有那麼少 QQ），所以可以值域壓縮後做 DP，可惜。</li>
 </ol>
 
     </div>
@@ -410,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E8%B3%87%E8%A8%8A"><span class="nav-number">1.</span> <span class="nav-text">比賽資訊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subtasks-Gained"><span class="nav-number">2.1.</span> <span class="nav-text">Subtasks Gained</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-Score%EF%BC%8FRank"><span class="nav-number">2.2.</span> <span class="nav-text">Final Score／Rank</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C%E6%AA%A2%E8%A8%8E"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">比賽資訊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subtasks-Gained"><span class="nav-number">2.1.</span> <span class="nav-text">Subtasks Gained</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-Score%EF%BC%8FRank"><span class="nav-number">2.2.</span> <span class="nav-text">Final Score／Rank</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

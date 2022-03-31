@@ -228,32 +228,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>倒數 15 天來寫日記好了，記錄每天做了些什麼才不會莫名一直頹下去還沒有自覺 &#x3D;w&#x3D;</p>
+        <p>倒數 15 天來寫日記好了，記錄每天做了些什麼才不會莫名一直頹下去還沒有自覺 =w=</p>
 <span id="more"></span>
-
-<h1 id="札記"><a href="#札記" class="headerlink" title="札記"></a>札記</h1><p>這幾個禮拜都嚴重睡眠不足，連 4 個睡眠週期都睡不到</p>
-<p>結果今天直接睡到下午一點多，根本沒做什麼事 &#x3D; &#x3D;</p>
-<p>寫了一點學校的功課然後只戳了一題，今天有點廢 &#x3D;w&#x3D;</p>
-<h1 id="2020-NPSC-初賽-pA-—-邊緣人"><a href="#2020-NPSC-初賽-pA-—-邊緣人" class="headerlink" title="2020 NPSC 初賽 pA — 邊緣人"></a>2020 NPSC 初賽 pA — 邊緣人</h1><p>今天戳了這題，覺得滿有趣的，來寫一下解法。</p>
-<h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><p>有 $N$ 個人（編號 $1 \sim N$）要分組，由 $1$ 號開始每 $x$ 人分成一組，最後沒有組的 $N\mod x$ 個人就是邊緣人。</p>
-<p>定義函數 $f(i)$ 為編號 $i$ 的人在 $x &#x3D; 1, 2, …, N$ 的情況中，是邊緣人的情況總數。</p>
-<p>給定 $N, L, R$，輸出 $f(L), f(L+1), …, f(R)$。</p>
+<h1>札記</h1>
+<p>這幾個禮拜都嚴重睡眠不足，連 4 個睡眠週期都睡不到</p>
+<p>結果今天直接睡到下午一點多，根本沒做什麼事 = =</p>
+<p>寫了一點學校的功課然後只戳了一題，今天有點廢 =w=</p>
+<h1>2020 NPSC 初賽 pA — 邊緣人</h1>
+<p>今天戳了這題，覺得滿有趣的，來寫一下解法。</p>
+<h3 id="題目">題目</h3>
+<p>有 $N$ 個人（編號 $1 \sim N$）要分組，由 $1$ 號開始每 $x$ 人分成一組，最後沒有組的 $N\mod x$ 個人就是邊緣人。</p>
+<p>定義函數 $f(i)$ 為編號 $i$ 的人在 $x = 1, 2, …, N$ 的情況中，是邊緣人的情況總數。</p>
+<p>給定 $N, L, R$，輸出 $f(L), f(L+1), …, f®$。</p>
 <p>$1 \leq N \leq 2^{40}$</p>
 <p>$L \leq R \leq N$</p>
 <p>$R - L \leq 3 \times 10^5$</p>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>你可能會用到的：</p>
+<h3 id="提示">提示</h3>
+<p>你可能會用到的：</p>
 <ol>
 <li>高斯符號不等式：$x-1 &lt; \lfloor x \rfloor \leq x$。</li>
-<li>調和級數：$1 + 1&#x2F;2 + 1&#x2F;3 + … + 1&#x2F;N \approx O(\log N)$</li>
+<li>調和級數：$1 + 1/2 + 1/3 + … + 1/N \approx O(\log N)$</li>
 <li>數論分塊 :)</li>
 </ol>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>這題是 Wiwi 放在讀書會拿來講解的題目，但我沒有聽不想被暴雷，結果想了超久才想到這題的作法 zzz。</p>
+<h3 id="解法">解法</h3>
+<p>這題是 Wiwi 放在讀書會拿來講解的題目，但我沒有聽不想被暴雷，結果想了超久才想到這題的作法 zzz。</p>
 <p>強烈建議這題畫圖跟自己舉例。</p>
 <p>看到 $2^{40}$ 又是數學題，明顯就是一題數論分塊題。</p>
 <p>首先這題有個觀察，如果 $i$ 是邊緣人的話，那麼所有大於 $i$ 的 $j$ 也會是邊緣人。</p>
 <p>接著計算答案的方式可以由 $x$ 的角度切入，枚舉 $x \in [1, N]$ 然後算每個 $x$ 會貢獻到 $[L, R]$ 當中的哪些人的答案（也就是會讓誰成為邊緣人）。但這樣複雜度會炸掉，所以我們考慮分塊。</p>
 <p>對於 $\leq \lfloor \sqrt{N} \rfloor$ 的 $x$，可以直接枚舉每個這樣的 $x$ 然後簡單地計算。</p>
-<p>設 $k &#x3D; x \lfloor \frac{N}{x} \rfloor$，$x$ 會讓編號大於等於 $k+1$ 的人都成為邊緣人，但詢問只有問 $L \sim R$ 的人，所以只要把 $max(k+1, L) \sim R$ 的人的答案全部 $+1$（當然，$k+1$ 如果 $&gt;R$ 那就什麼事情都不用做）。</p>
+<p>設 $k = x \lfloor \frac{N}{x} \rfloor$，$x$ 會讓編號大於等於 $k+1$ 的人都成為邊緣人，但詢問只有問 $L \sim R$ 的人，所以只要把 $max(k+1, L) \sim R$ 的人的答案全部 $+1$（當然，$k+1$ 如果 $&gt;R$ 那就什麼事情都不用做）。</p>
 <p>接下來處理 $&gt; \lfloor \sqrt{N} \rfloor$ 的 $x$，這時候我們換另一個角度算答案，從原本枚舉一組的大小 $x$，換成枚舉組的數量 $t$，$t \in [1, O(\sqrt{N})]$。</p>
 <p>當一共分成 $t$ 組時，考慮一組的大小 $x$ 的範圍，可以用高斯符號的不等式性質推出：</p>
 <p>$$\frac{N}{x}-1 &lt; \lfloor \frac{N}{x} \rfloor \leq \frac{N}{x}$$</p>
@@ -263,14 +267,14 @@
 <p>姑且設 $x \in [l, r]$。</p>
 <p>然後考慮這個區間每個 $x$ 會讓某個人成為邊緣人的「開始點」，會發現開始點就是 $tx + 1$，於是把 $max(tx + 1, L) \sim R$ 的人的答案 $+1$，於是對每個 $x \in [l, r]$ 做一樣的事情，起始點分別是 $tl + 1, t(l+1) + 1, t(l+2) + 1, … tr+1$ 然後做區間加值。</p>
 <p>最後還有個優化，由於 $t$ 很小的時候，起始點的數量會太多，複雜度還是會炸掉。然而觀察發現這些起始點大部分都會小於 $L$，所以我們可以直接先快速算小於 $L$ 的起始點有幾個，一樣要推個不等式但這裡我就不細寫，總之可以 $O(1)$ 算出。然後對於 $[L, R]$ 內起始點我們便暴力掃過它們然後做區間加值。</p>
-<p>注意到最後才要輸出答案，所以所有的加值過程可以直接用前綴和優化單次 $O(1)$ 加值，不需要線段樹，這樣均攤複雜度會是 $O((R-L)&#x2F;1) + O((R-L)&#x2F;2) + … + O((R-L)&#x2F; \lfloor \sqrt{N} \rfloor) \in O((R-L) \log \sqrt{N})$。</p>
+<p>注意到最後才要輸出答案，所以所有的加值過程可以直接用前綴和優化單次 $O(1)$ 加值，不需要線段樹，這樣均攤複雜度會是 $O((R-L)/1) + O((R-L)/2) + … + O((R-L)/ \lfloor \sqrt{N} \rfloor) \in O((R-L) \log \sqrt{N})$。</p>
 <p>於是總時間複雜度會是 $O(\sqrt{N} + (R-L) \log \sqrt{N})$。</p>
 <p>以下是 <code>init()</code> 跟 <code>solve()</code> 函式的程式碼：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">ll n, L, R;</span><br><span class="line">ll ans[maxn];  <span class="comment">// map [L, R] -&gt; [0, R-L]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; L &gt;&gt; R;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ll cut = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; cut*cut &lt;= n; cut++) &#123;</span><br><span class="line">        ll p = <span class="built_in">max</span>(cut*(n/cut)+<span class="number">1</span>, L);</span><br><span class="line">        <span class="keyword">if</span> (p &gt; R) <span class="keyword">continue</span>;</span><br><span class="line">        ans[p-L]++;</span><br><span class="line">    &#125;</span><br><span class="line">    cut--;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (ll t = n/cut<span class="number">-1</span>; t &gt;= <span class="number">1</span>; t--) &#123;</span><br><span class="line">        ll x = n/(t+<span class="number">1</span>)+<span class="number">1</span>;</span><br><span class="line">        ll p = t*x+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (p &lt; L) &#123;</span><br><span class="line">            ll v = (L-p+t<span class="number">-1</span>)/t;</span><br><span class="line">            p += v*t;</span><br><span class="line">            ans[<span class="number">0</span>] += v;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; p &lt;= R; p += t) ans[p-L]++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">FOR</span>(i, <span class="number">1</span>, R-L+<span class="number">1</span>, <span class="number">1</span>) ans[i] += ans[i<span class="number">-1</span>];</span><br><span class="line">    <span class="built_in">REP</span>(i, R-L+<span class="number">1</span>) cout &lt;&lt; ans[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>我知道我這樣寫一定沒有人看得懂，但當你拿起筆開始算的時候就會知道我在說什麼了，總之這題很有趣，推大家寫 :D</p>
-<p>兩年前有參加這場 NPSC，然後我記得那時候一直盯著這題卡很久，是完全沒有任何想法乾燒 5 小時，隔了一年終於把它解決掉了，現在想想那時候真的好笨，其實現在也是 &#x3D;w&#x3D;。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>最近心情其實滿焦慮的，要做事情真的比我想像的多，一直擔心做不完然後又沒力氣開始做事，差一點又快撐不住崩潰zzz</p>
+<p>兩年前有參加這場 NPSC，然後我記得那時候一直盯著這題卡很久，是完全沒有任何想法乾燒 5 小時，隔了一年終於把它解決掉了，現在想想那時候真的好笨，其實現在也是 =w=。</p>
+<h1>結語</h1>
+<p>最近心情其實滿焦慮的，要做事情真的比我想像的多，一直擔心做不完然後又沒力氣開始做事，差一點又快撐不住崩潰zzz</p>
 <p>幸好晚上有找女友聊天，聊了滿久的，聊完以後心情意外好很多，也覺得有動力繼續向前了，感謝女友的幫助 &gt; &lt;</p>
 
     </div>
@@ -355,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AD%E8%A8%98"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2020-NPSC-%E5%88%9D%E8%B3%BD-pA-%E2%80%94-%E9%82%8A%E7%B7%A3%E4%BA%BA"><span class="nav-number">2.</span> <span class="nav-text">2020 NPSC 初賽 pA — 邊緣人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">2.0.2.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.0.3.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">3.</span> <span class="nav-text">結語</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">2020 NPSC 初賽 pA — 邊緣人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">2.0.2.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.0.3.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">結語</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -249,23 +249,17 @@
     font-weight: bold;
 }
 </style>
-
-
 <p>沒進全國賽，還好有這場優質的模擬賽可以過過乾癮 &gt; &lt;</p>
 <span id="more"></span>
-
-
-<h1 id="比賽資訊"><a href="#比賽資訊" class="headerlink" title="比賽資訊"></a>比賽資訊</h1><ul>
+<h1>比賽資訊</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://contest.nhspc.cc/ranking/Ranking.html"><strong>計分板</strong></a></li>
 </ul>
 <img src="/2021/12/05/2021nhspcmock/rank.png" class>
-
-
-<h1 id="比賽結果"><a href="#比賽結果" class="headerlink" title="比賽結果"></a>比賽結果</h1><img src="/2021/12/05/2021nhspcmock/result.png" class>
-
-
-
-<h1 id="比賽過程"><a href="#比賽過程" class="headerlink" title="比賽過程"></a>比賽過程</h1><p>幾乎沒打過 5hr OI，於是直接沿用 3hr OI 的打法，先花時間把所有題目掃過一次。</p>
+<h1>比賽結果</h1>
+<img src="/2021/12/05/2021nhspcmock/result.png" class>
+<h1>比賽過程</h1>
+<p>幾乎沒打過 5hr OI，於是直接沿用 3hr OI 的打法，先花時間把所有題目掃過一次。</p>
 <p>大概讀了半個小時，後面幾題沒仔細研究就想開始寫 code 了。</p>
 <p>對題目大致上的理解：</p>
 <blockquote>
@@ -291,14 +285,21 @@
 <p>令 $dp[i][w]$ 為決定好前 $i$ 個位置的拳法，得分能否為 $w$（其中 $w$ 的值域介於 $-n \sim n$ 之間），標準的背包問題。</p>
 <p>但我一直在想有沒有複雜度更優的做法，閃過二分搜答案的想法但馬上排掉這念頭，因為顯然沒有任何單調性。</p>
 <p>最後決定先撈 53 分。</p>
-<p>開開心心寫完 DP 後才發現，幹忘記還要回溯答案，於是又修修改改，前後寫了快一小時。又在耍智障 &#x3D; &#x3D;”。</p>
+<p>開開心心寫完 DP 後才發現，幹忘記還要回溯答案，於是又修修改改，前後寫了快一小時。又在耍智障 = =&quot;。</p>
 <p><span class="lv1">02:44 pD 0</span></p>
 <p>無解的時候把 <code>return;</code> 寫成 <code>exit(0);</code>，改一下就 53 分了。</p>
 <p><span class="lv3">02:48 pD 53</span></p>
 <p>接下來是整場犯下最大的錯誤。</p>
 <p>53 分拿到了，但我看到只有最後 4 筆 TLE 就一直告訴自己繼續拿滿，告訴自己再多壓一下常數會過。</p>
 <p>反正又開始腦衝亂改 pD 的 code，也不管後面的題目有多少分可以撈。</p>
-<p><span class="lv3">03:18 pD 53</span><br><span class="lv2">03:22 pD 14</span><br><span class="lv2">03:25 pD 6</span><br><span class="lv1">03:28 pD 0</span><br><span class="lv1">03:33 pD 0</span><br><span class="lv1">03:35 pD 0</span><br><span class="lv3">03:37 pD 53</span><br><span class="lv3">03:39 pD 53</span></p>
+<p><span class="lv3">03:18 pD 53</span><br>
+<span class="lv2">03:22 pD 14</span><br>
+<span class="lv2">03:25 pD 6</span><br>
+<span class="lv1">03:28 pD 0</span><br>
+<span class="lv1">03:33 pD 0</span><br>
+<span class="lv1">03:35 pD 0</span><br>
+<span class="lv3">03:37 pD 53</span><br>
+<span class="lv3">03:39 pD 53</span></p>
 <p>我到底在幹嘛…</p>
 <p>結論是 bitset 真的可以過，只是我現在覺得我沒過是因為回溯的常數沒有壓掉。</p>
 <p>其實本來有想過可以開兩個 bitset 存回溯值（只有 <code>R/P/S</code> 三種），這八成也是對的，但我賽中不寫就是不寫，硬要跑去改一些無關緊要的地方，最後又浪費了快一個小時。</p>
@@ -308,7 +309,7 @@
 <p>思考大概 20 分鐘後，發現前面有 team 被 pop 掉的時候，假設 pop 掉 $r$ 個人，後面所有 size 大於 $r$ 的人都會被旋轉 $r$ 次，其他人完全無影響。</p>
 <p>所以可以用值域 BIT 維護「每次從隊伍中刪除的人數」的次數，大於 $max{A_i}$ 的可以忽略。</p>
 <p>並且預處理前綴和，每次詢問第 $k$ 個人是誰就先對前綴二分搜，搜 $k$ 在哪個隊伍裡面，接著用 BIT 查詢這個隊伍被旋轉了幾次（<code>bit.query(a[team]-1)</code>），就可以知道 $k$ 是誰。</p>
-<p>實作意外滿順的，雖然我還是寫了半小時 &#x3D; &#x3D;”</p>
+<p>實作意外滿順的，雖然我還是寫了半小時 = =&quot;</p>
 <p><span class="lv4">04:38 pE 100</span></p>
 <p>剩 20 分鐘只能撈最水最好寫的分數。</p>
 <p>發現 pG 5 分語法分，馬上撈掉。</p>
@@ -316,9 +317,10 @@
 <p>22 分感覺欠三分搜，沒有驗過就開寫，結果還真的是這樣。</p>
 <p><span class="lv2">04:56 pG 22</span></p>
 <blockquote>
-<p><strong>Score: 480&#x2F;900, Rk: 15</strong></p>
+<p><strong>Score: 480/900, Rk: 15</strong></p>
 </blockquote>
-<h1 id="賽後檢討"><a href="#賽後檢討" class="headerlink" title="賽後檢討"></a>賽後檢討</h1><p>北市賽後都在搶救學分，段考完後發現已經兩個禮拜沒寫 code 了，所以我也不期望這場會打得多好。</p>
+<h1>賽後檢討</h1>
+<p>北市賽後都在搶救學分，段考完後發現已經兩個禮拜沒寫 code 了，所以我也不期望這場會打得多好。</p>
 <p>賽中發現思考、實作都滿卡的，前面的水題不應該寫那麼久。</p>
 <p>不過最可悲的應該是第 3 個小時了吧，一直想拿 pD 滿分還堅持不寫對的做法，腦袋不知道被什麼東西卡到，又是跟北市賽犯一樣的錯誤。</p>
 <p>打完發現有 Rk.15，其實覺得還行，從高一 Rk.69 $\rightarrow$ 高二 Rk.27 $\rightarrow$ 高三 Rk.15，發現底力有在進步，還滿開心的。</p>
@@ -406,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E8%B3%87%E8%A8%8A"><span class="nav-number">1.</span> <span class="nav-text">比賽資訊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%B3%BD%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C%E6%AA%A2%E8%A8%8E"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">比賽資訊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">比賽結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">比賽過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">賽後檢討</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
