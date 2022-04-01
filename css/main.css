@@ -1256,7 +1256,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7132ff;
+  background: #ffec3e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2764,24 +2764,24 @@ mjx-container + br {
   display: none !important;
 }
 body {
-  background: url("/images/colordotwallpaper2.png");
+  background: url("/images/colordotwallpaper7.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
 }
 .post-block {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.96);
 }
 .sidebar {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header-inner {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
 }
 .pagination {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
 }
 .comments {
-  opacity: 0.8;
+  opacity: 0.9;
 }
