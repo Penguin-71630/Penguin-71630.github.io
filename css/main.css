@@ -250,7 +250,7 @@ p {
 a,
 span.exturl {
   border-bottom: 1px solid #999;
-  color: var(--link-color);
+  color: #ebebeb;
   outline: 0;
   text-decoration: none;
   overflow-wrap: break-word;
@@ -1287,7 +1287,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff57a3;
+  background: #527dff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1967,13 +1967,13 @@ pre .javascript .function {
 }
 .posts-expand .post-title-link {
   border-bottom: none;
-  color: var(--link-color);
+  color: #ebebeb;
   display: inline-block;
   position: relative;
   vertical-align: top;
 }
 .posts-expand .post-title-link::before {
-  background: var(--link-color);
+  background: #ebebeb;
   bottom: 0;
   content: '';
   height: 2px;
@@ -2866,23 +2866,20 @@ body {
   background-position: 50% 50%;
 }
 .post-block {
-  background: rgba(70,70,70,0.9);
-  color: #46e153;
+  background: rgba(70,70,70,0.79);
+  color: #ebebeb;
 }
 .sidebar {
   opacity: 0.9;
 }
 .header-inner {
-  background: rgba(70,70,70,0.9);
-  color: #46e153;
+  background: rgba(70,70,70,0.79);
+  color: #ebebeb;
 }
 .pagination {
-  background: rgba(70,70,70,0.9);
-  color: #46e153;
+  background: rgba(70,70,70,0.79);
+  color: #ebebeb;
 }
 .comments {
   opacity: 0.9;
-}
-a {
-  color: #46e153;
 }
