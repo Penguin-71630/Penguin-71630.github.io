@@ -12,12 +12,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Light:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Cascadia Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Regular:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Jetbrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideUpIn","post_body":"slideUpIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="剩 14 天zzzz">
@@ -122,6 +122,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -236,13 +241,13 @@
 <p>來分享一下 CSES 的題目 OwO。</p>
 <h1>CSES Movie Festival Queries</h1>
 <p>題目連結：<a target="_blank" rel="noopener" href="https://cses.fi/problemset/task/1664">https://cses.fi/problemset/task/1664</a></p>
-<h3 id="題目-2">題目</h3>
+<h3 id="題目">題目</h3>
 <p>有 $N$ 條線段，每條線段有各自的起始點 $l_i$ 和結束點 $r_i$，$Q$ 筆詢問 $ql_i, qr_i$，請問從 $N$ 條線段中選出一些不重疊的，且滿足線段完整落在 $ql_i, qr_i$ 之間，最多能選多少條？</p>
 <p>$1 \leq N, Q \leq 2 \times 10^5$</p>
 <p>$1 \leq l_i \leq r_i \leq 10^6$</p>
 <p>$1 \leq ql_i \leq qr_i \leq 10^6$</p>
 <p>附註：兩條線段例如 $[1, 3], [3, 4]$ 是不重疊的。</p>
-<h3 id="解法-2">解法</h3>
+<h3 id="解法">解法</h3>
 <p>這題想了好久，最後跑去戳 abcorz 簡報的提示才想到可以用 Sparse Table，我覺得好酷。</p>
 <p>這題的 Sparse Table 是存每個時間點往後看 $2^i$ 場電影最快什麼時候可以看完。稀疏表的兩個維度是不同的，反正第一次碰到這樣的應用然後我就被暴打 =w=。</p>
 <p>總之設 $s[k][t] \equiv $ 從 $t$ 開始看 $2^i$ 場電影最快看完的時間。</p>
@@ -336,7 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">CSES Movie Festival Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE-2"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95-2"><span class="nav-number">2.0.2.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">CSES Movie Festival Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.0.2.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -364,10 +369,13 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Penguin-71630" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Penguin-71630" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+        <a href="https://instagram.com/penguin71630" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;penguin71630" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/discordapp.com/users/627459280043376689" title="Discord → discordapp.com&#x2F;users&#x2F;627459280043376689"><i class="fab fa-discord fa-fw"></i></a>
       </span>
   </div>
 
@@ -392,7 +400,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -450,6 +458,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

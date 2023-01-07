@@ -12,12 +12,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Light:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Cascadia Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans CJK TC Regular:300,300italic,400,400italic,700,700italic|Noto Sans CJK TC Medium:300,300italic,400,400italic,700,700italic|Jetbrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideUpIn","post_body":"slideUpIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="倒數 15 天來寫日記好了，記錄每天做了些什麼才不會莫名一直頹下去還沒有自覺 &#x3D;w&#x3D;">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="倒數 15 天來寫日記好了，記錄每天做了些什麼才不會莫名一直頹下去還沒有自覺 &#x3D;w&#x3D;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-26T14:44:25.000Z">
-<meta property="article:modified_time" content="2022-03-29T14:24:58.940Z">
+<meta property="article:modified_time" content="2023-01-07T10:39:54.202Z">
 <meta property="article:author" content="Gino">
 <meta property="article:tag" content="competitive programming">
 <meta name="twitter:card" content="summary">
@@ -124,6 +124,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -214,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022.03.29 22:24:58" itemprop="dateModified" datetime="2022-03-29T22:24:58+08:00">2022.03.29</time>
+                <time title="Modified: 2023.01.07 18:39:54" itemprop="dateModified" datetime="2023-01-07T18:39:54+08:00">2023.01.07</time>
               </span>
 
           
@@ -236,10 +241,10 @@
 <p>寫了一點學校的功課然後只戳了一題，今天有點廢 =w=</p>
 <h1>2020 NPSC 初賽 pA — 邊緣人</h1>
 <p>今天戳了這題，覺得滿有趣的，來寫一下解法。</p>
-<h3 id="題目">題目</h3>
+<h3 id="題目-2">題目</h3>
 <p>有 $N$ 個人（編號 $1 \sim N$）要分組，由 $1$ 號開始每 $x$ 人分成一組，最後沒有組的 $N\mod x$ 個人就是邊緣人。</p>
 <p>定義函數 $f(i)$ 為編號 $i$ 的人在 $x = 1, 2, …, N$ 的情況中，是邊緣人的情況總數。</p>
-<p>給定 $N, L, R$，輸出 $f(L), f(L+1), …, f®$。</p>
+<p>給定 $N, L, R$，輸出 $f(L), f(L+1), …, f( R )$。</p>
 <p>$1 \leq N \leq 2^{40}$</p>
 <p>$L \leq R \leq N$</p>
 <p>$R - L \leq 3 \times 10^5$</p>
@@ -250,7 +255,7 @@
 <li>調和級數：$1 + 1/2 + 1/3 + … + 1/N \approx O(\log N)$</li>
 <li>數論分塊 :)</li>
 </ol>
-<h3 id="解法">解法</h3>
+<h3 id="解法-2">解法</h3>
 <p>這題是 Wiwi 放在讀書會拿來講解的題目，但我沒有聽不想被暴雷，結果想了超久才想到這題的作法 zzz。</p>
 <p>強烈建議這題畫圖跟自己舉例。</p>
 <p>看到 $2^{40}$ 又是數學題，明顯就是一題數論分塊題。</p>
@@ -275,7 +280,7 @@
 <p>兩年前有參加這場 NPSC，然後我記得那時候一直盯著這題卡很久，是完全沒有任何想法乾燒 5 小時，隔了一年終於把它解決掉了，現在想想那時候真的好笨，其實現在也是 =w=。</p>
 <h1>結語</h1>
 <p>最近心情其實滿焦慮的，要做事情真的比我想像的多，一直擔心做不完然後又沒力氣開始做事，差一點又快撐不住崩潰zzz</p>
-<p>幸好晚上有找女友聊天，聊了滿久的，聊完以後心情意外好很多，也覺得有動力繼續向前了，感謝女友的幫助 &gt; &lt;</p>
+<p>幸好晚上有找女友聊天，聊了滿久的，聊完以後心情意外好很多，也覺得有動力繼續向前了，感謝女友 &gt; &lt;</p>
 
     </div>
 
@@ -359,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">2020 NPSC 初賽 pA — 邊緣人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">2.0.2.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.0.3.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">結語</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">札記</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">2020 NPSC 初賽 pA — 邊緣人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE-2"><span class="nav-number">2.0.1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">2.0.2.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95-2"><span class="nav-number">2.0.3.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">結語</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -387,10 +392,13 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Penguin-71630" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Penguin-71630" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/profile.php?id=100040524759688" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100040524759688" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+        <a href="https://instagram.com/penguin71630" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;penguin71630" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/discordapp.com/users/627459280043376689" title="Discord → discordapp.com&#x2F;users&#x2F;627459280043376689"><i class="fab fa-discord fa-fw"></i></a>
       </span>
   </div>
 
@@ -415,7 +423,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -473,6 +481,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
