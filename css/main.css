@@ -315,7 +315,10 @@ table {
   width: 100%;
 }
 tbody tr:nth-of-type(odd) {
-  background: var(--table-row-odd-bg-color);
+  background-color: rgba(111,111,111,0.9);
+}
+tbody tr:nth-of-type(even) {
+  background-color: rgba(86,86,86,0.9);
 }
 tbody tr:hover {
   background: var(--table-row-hover-bg-color);
@@ -619,6 +622,7 @@ pre .javascript .function {
   padding: 0;
   position: relative;
   text-align: center;
+  color: #bebebe;
 }
 .blockquote-center .fa {
   display: block;
@@ -791,6 +795,7 @@ pre .javascript .function {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
+  color: #323232;
   background: #f9f9f9;
   border: initial;
   border-left: 3px solid #eee;
@@ -1287,7 +1292,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #527dff;
+  background: #90ff41;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2831,28 +2836,69 @@ mjx-container + br {
     margin: 10px 0 0;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 567px) {
   .content-wrap {
-    padding: 8px;
+    padding: initial !important;
   }
-  .posts-expand .post-button {
-    margin: 12px 0;
+  .posts-expand .post-meta {
+    margin: 3px 0 10px 0 !important;
   }
   .post-block {
-    border-radius: initial;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-    min-height: auto;
-    padding: 12px;
+    padding: 8px 18px 8px !important;
+    margin: 15px;
   }
-  .post-block + .post-block {
-    margin-top: 8px;
+  .posts-collapse {
+    margin-left: 0;
+    margin-right: 0;
   }
-  .comments {
-    margin-top: 8px;
-    padding: 10px 12px;
+  .post-body h1,
+  .post-body h2,
+  .post-body h3,
+  .post-body h4,
+  .post-body h5,
+  .post-body h6 {
+    margin: 10px 0 8px;
+  }
+  .post-body .note h1,
+  .post-body .tabs .tab-content .tab-pane h1,
+  .post-body .note h2,
+  .post-body .tabs .tab-content .tab-pane h2,
+  .post-body .note h3,
+  .post-body .tabs .tab-content .tab-pane h3,
+  .post-body .note h4,
+  .post-body .tabs .tab-content .tab-pane h4,
+  .post-body .note h5,
+  .post-body .tabs .tab-content .tab-pane h5,
+  .post-body .note h6,
+  .post-body .tabs .tab-content .tab-pane h6 {
+    margin: 0 5px;
+  }
+  .post-body > p {
+    margin: 0 0 10px 0;
+  }
+  .post-body .note > p,
+  .post-body .tabs .tab-content .tab-pane > p {
+    padding: 0 5px;
+  }
+  .post-body img,
+  .post-body video {
+    margin-bottom: 10px !important;
+  }
+  .post-body .note {
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+  }
+  .post-body .note:not(.no-icon) {
+    padding-left: 35px !important;
+  }
+  .post-body .tabs .tab-content .tab-pane {
+    padding: 10px 10px 0 10px !important;
+  }
+  .post-eof {
+    margin: 40px auto 20px !important;
   }
   .pagination {
-    margin: 8px 0 0;
+    margin-top: 40px;
   }
 }
 .archive .collection-title {
