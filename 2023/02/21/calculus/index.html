@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"penguin-71630.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideUpIn","post_body":"slideUpIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+  <meta name="description" content=".lv1 {     color: #f02947;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #fad82f;     font-weight: bold; } .lv4 {     color: #35e61e;     font-weight:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微積分筆記：Ch.11 Sequences + Series">
+<meta property="og:title" content="微積分筆記：數列與級數">
 <meta property="og:url" content="http://penguin-71630.github.io/2023/02/21/calculus/index.html">
 <meta property="og:site_name" content="Gino&#39;s Blog">
-<meta property="og:description" content=".lv1 {     color: red;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #bfad0b;     font-weight: bold; } .lv4 {     color: #27cf40;     font-weight: bol">
+<meta property="og:description" content=".lv1 {     color: #f02947;     font-weight: bold; } .lv2 {     color: #e89a13;     font-weight: bold; } .lv3 {     color: #fad82f;     font-weight: bold; } .lv4 {     color: #35e61e;     font-weight:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-21T14:58:10.000Z">
-<meta property="article:modified_time" content="2023-02-23T09:43:31.065Z">
+<meta property="article:modified_time" content="2023-02-27T18:12:24.951Z">
 <meta property="article:author" content="Gino">
 <meta property="article:tag" content="course note">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>微積分筆記：Ch.11 Sequences + Series | Gino's Blog</title>
+  <title>微積分筆記：數列與級數 | Gino's Blog</title>
   
 
 
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          微積分筆記：Ch.11 Sequences + Series
+          微積分筆記：數列與級數
         </h1>
 
         <div class="post-meta">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023.02.23 17:43:31" itemprop="dateModified" datetime="2023-02-23T17:43:31+08:00">2023.02.23</time>
+                <time title="Modified: 2023.02.28 02:12:24" itemprop="dateModified" datetime="2023-02-28T02:12:24+08:00">2023.02.28</time>
               </span>
 
           
@@ -235,7 +235,7 @@
       
         <style>
 .lv1 {
-    color: red;
+    color: #f02947;
     font-weight: bold;
 }
 .lv2 {
@@ -243,16 +243,76 @@
     font-weight: bold;
 }
 .lv3 {
-    color: #bfad0b;
+    color: #fad82f;
     font-weight: bold;
 }
 .lv4 {
-    color: #27cf40;
+    color: #35e61e;
     font-weight: bold;
 }
 </style>
+<span id="more"></span>
 <!-- ------------------------------------------------------------- -->
-<p>// Under Construction</p>
+<blockquote>
+<p>Course: Calculus (II)<br>
+Instructor: 莊重<br>
+Time: 2023 Spring</p>
+</blockquote>
+<h1>Sequences</h1>
+<p><strong>Limit of a Sequence</strong></p>
+<p>$$<br>
+\lim_{n \to \infty} a_n = L \iff \forall \epsilon &gt; 0, \exists N \ \ s.t. \forall n &gt; N, |a_n-L| &lt; \epsilon<br>
+$$</p>
+<p>$$<br>
+\lim_{n \to \infty} a_n = \infty \iff \forall M &gt; 0, \exists N \ \ s.t. \forall n &gt; N, a_n &gt; M<br>
+$$</p>
+<p><strong>Discrete v.s. Continuous</strong></p>
+<p>$$<br>
+\lim_{x \to \infty} f(x) = L, f(n) = a_n \ \forall n \in \mathbb{Z^+}  \Longrightarrow \lim_{n \to \infty} a_n = L<br>
+$$</p>
+<p><strong>Limit + Continuous Function</strong></p>
+<p>If $\displaystyle\lim_{n \to \infty} a_n = L$ and $f$ is <strong>continuous at $L$</strong>, then $\displaystyle\lim_{n \to \infty} f(a_n) = f(\lim_{n \to \infty} a_n) = f(L)$</p>
+<p><strong>Monotonic / Bounded</strong></p>
+<ul>
+<li>Increasing: $a_{n} &lt; a_{n+1}$</li>
+<li>Decreasing: $a_{n} &gt; a_{n+1}$</li>
+<li>Monotonic: Either Increasing or Decreasing</li>
+<li>Bounded Above (上面有東西擋住): $\exists M \ s.t. a_n \le M \ \ (\forall n)$</li>
+<li>Bounded Below (下面有東西擋住): $\exists m \ s.t. m \le a_n \ \ (\forall n)$</li>
+<li>Bounded Sequence: bounded above and below at the same time</li>
+</ul>
+<div class="note default">
+            <p><strong>Monotonic Sequence Theorem</strong></p><ul><li><strong>Increasing</strong> and <strong>Bounded Above</strong> $\Longrightarrow$ convergent</li><li><strong>Decreasing</strong> and <strong>Bounded Below</strong> $\Longrightarrow$ convergent</li></ul>
+          </div>
+<h1>Series</h1>
+<h2 id="Convergence-Tests-for-Series">Convergence Tests for Series</h2>
+<div class="note default">
+            <ol><li><strong>$a_n$ 一定要收斂到 0</strong></li></ol>
+          </div>
+<p>$\displaystyle \sum_{n=1}^{\infty} a_n$ is convergent $\Longrightarrow$ $\displaystyle \lim_{n \to \infty} a_n = 0$</p>
+<p>$\displaystyle \lim_{n \to \infty} a_n \ne 0$ $\Longrightarrow$ $\displaystyle \sum_{n=1}^{\infty} a_n$ is divergent</p>
+<blockquote>
+<p>$\displaystyle \lim_{n \to \infty} a_n = 0$ $\not\Longrightarrow$ $\displaystyle \sum_{n=1}^{\infty} a_n$ is convergent  (Counter Example: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n}$)</p>
+</blockquote>
+<p>.</p>
+<div class="note default">
+            <ol start="2"><li><strong>p-series 由分母的次方決定</strong></li></ol>
+          </div>
+<p>$\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^p (\ln n)^q}$ is <span class="lv4">convergent</span> if $p &gt; 1$</p>
+<p>$\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^p (\ln n)^q}$ is <span class="lv4">convergent</span> if $p = 1, q &gt; 1$</p>
+<p>$\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^p (\ln n)^q}$ is <span class="lv1">divergent</span> if $p = 1, q \le 1$</p>
+<p>$\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^p (\ln n)^q}$ is <span class="lv1">divergent</span> if $p &lt; 1$</p>
+<p>.</p>
+<div class="note default">
+            <ol start="3"><li><strong>Integral Tests</strong></li></ol>
+          </div>
+<p>Suppose $f(x)$ starts decreasing when $x \ge n$, then</p>
+<p>$$<br>
+s_n + \int_{n}^{\infty} f(x) dx \le s \le s_n + \int_{n+1}^{\infty} f(x) dx<br>
+$$</p>
+<p>數論裡面一些演算法的時間複雜度、函數成長速度就是用積分估算的。</p>
+<p>調和級數：$\displaystyle \sum_{n=1}^{N} \frac{N}{n} \approx \int_{1}^{N} \frac{N}{x} dx = \Theta(N \log N)$</p>
+<p>杜教篩：$\displaystyle N^\frac{2}{3} + \sum_{n=1}^{\lfloor N^{1/3} \rfloor} \sqrt{\frac{N}{n}} \approx N^\frac{2}{3} + \int_{1}^{N^{1/3}} \sqrt{\frac{N}{x}} dx = O(N^\frac{2}{3})$</p>
 
     </div>
 
@@ -336,6 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Sequences</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Convergence-Tests-for-Series"><span class="nav-number">2.1.</span> <span class="nav-text">Convergence Tests for Series</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
