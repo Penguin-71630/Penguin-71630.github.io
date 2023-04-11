@@ -30,8 +30,15 @@
 <meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/blackbody.png">
 <meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/photoelectric.png">
 <meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/xray.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/h_spectrum.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/franck-hertz.jpg">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/laser1.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/e-diffraction1.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/e-diffraction2.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/uncertainty1.png">
+<meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/uncertainty2.png">
 <meta property="article:published_time" content="2023-02-23T09:16:10.000Z">
-<meta property="article:modified_time" content="2023-04-11T10:12:12.364Z">
+<meta property="article:modified_time" content="2023-04-11T13:35:07.515Z">
 <meta property="article:author" content="Gino">
 <meta property="article:tag" content="course note">
 <meta name="twitter:card" content="summary">
@@ -223,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023.04.11 18:12:12" itemprop="dateModified" datetime="2023-04-11T18:12:12+08:00">2023.04.11</time>
+                <time title="Modified: 2023.04.11 21:35:07" itemprop="dateModified" datetime="2023-04-11T21:35:07+08:00">2023.04.11</time>
               </span>
 
           
@@ -366,12 +373,112 @@ $$</p>
 <h2 id="拉塞福行星模型">拉塞福行星模型</h2>
 <p>湯姆森的學生拉塞福在進行 $\alpha$ 粒子散射實驗時，發現 $\alpha$ 粒子約有 1/8000 的機率產生大角度散射 (大於 90 度)，證明了湯姆森的西瓜模型是錯誤的，並提出行星模型。</p>
 <div class="note danger">
-            <p>西瓜模型錯誤的點：把原子核質量均勻分布的話，每個區域的質量會比 $\alpha$ 粒子小非常多，當 $\alpha$ 粒子打上去的時候，由於質量差距懸殊，理論上會必定穿透，大角度散射機率遠小於 1/8000 (實際值約為 $1/10^{3500}$)，類似灑一團麵粉飄在空氣中，然後拿一顆球往那團麵粉砸。</p>
+            <p>西瓜模型錯誤的點：把原子核質量均勻分布的話，每個區域的質量會比 $\alpha$ 粒子小非常多，當 $\alpha$ 粒子打上去的時候，由於質量差距懸殊，理論上會必定穿透，大角度散射機率遠小於 1/8000 (實際值約為 $1/10^{3500}$)，類似灑一團麵粉在空氣中，然後拿一顆球往那團麵粉砸。</p>
           </div>
 <div class="note warning">
-            <p>行星模型：正電的部分是集中在原子中心，半徑約為 $10^{-5} \mathring{A}$，稱為原子核。電子以庫侖力為向心力繞核作圓周運動，是為行星模型。</p><p>用黃色框包住這個區域是因為行星模型也是錯誤的。</p>
+            <p>行星模型：正電的部分是集中在原子中心，半徑約為 $10^{-5} \mathring{A}$，稱為原子核。電子以庫侖力為向心力繞核作圓周運動，是為行星模型。</p><p>行星模型實際上也是錯誤的，按照古典物理來解釋的話會有無法解釋清楚的部分。</p><ol><li><p>行星模型內的電子是作圓周運動，固定一個水平軸來看的話即是作簡諧震盪。按照古典物理，帶電粒子作簡諧運動會產生電場與磁場的震盪，必定會輻射出電磁波。電子若輻射電磁波則會損失能量，能量損失會造成電子軌道半徑越來越小，最終墜毀在原子核。這樣的話所有原子都不可能穩定存在。</p></li><li><p>延續上文，當軌道半徑越來越小時，電子繞核旋轉的頻率會越來越高，電場與磁場震盪頻率也隨之增加，輻射出的電磁波波長越短，並且這是連續變化，因此原子的光譜應該要呈現連續變化。然而實際上並非如此。</p></li></ol>
           </div>
+<h2 id="氫原子光譜">氫原子光譜</h2>
+<img src="/2023/02/23/physics/h_spectrum.png" width="40%">
+<p>萊曼系列：紫外光，為電子躍遷回第 1 能階輻射出的光譜。</p>
+<p>巴末爾系列：可見光，為電子躍遷回第 2 能階輻射出的光譜。</p>
+<p>帕申系列：紅外光，為電子躍遷回第 3 能階輻射出的光譜。</p>
+<p>芮得柏公式：</p>
+<p>$$ \frac{1}{\lambda} = R(\frac{1}{n_a^2} - \frac{1}{n_b^2}), \quad R \approx 1.096 \times 10^{7} \text{芮得柏常數} $$</p>
+<h2 id="波爾氫原子模型">波爾氫原子模型</h2>
+<p>波爾受普朗克的量子化觀念啟發，嘗試修正拉塞福的行星模型，以這些為基礎提出了一些不符合古典物理的假設。很神奇的是推導出來的結果竟然能完美地解釋氫原子光譜。</p>
+<div class="note success">
+            <p><strong>Bohr Postulates</strong></p><ol><li><p>電子只能在特定軌道運動，即角動量量子化：$L = mvr = n\hbar$。$\displaystyle \hbar = \frac{h}{2 \pi}$ 為約化普朗克常數。</p></li><li><p>電子繞核圓周運動時不會輻射電磁波。</p></li><li><p>電子只有在轉換軌道時才會輻射能量。假設兩軌道之間的位能差為 $\Delta E$，則 $\Delta E = h\nu$。</p></li></ol>
+          </div>
+<p>利用波爾的假設與古典物理，可推算電子動能與位能，進一步推算每個能階的能量大小。</p>
+<p>利用向心力 $=$ 庫侖力，列出聯立方程：</p>
+<p>$$<br>
+mvr = n\hbar, \ \ \frac{mv^2}{r} = \frac{ke^2}{r^2}<br>
+$$</p>
+<div class="note info">
+            <p><strong>電子動能</strong></p><p>化簡聯立方程第 2 式：</p><p>$$ mvr = n\hbar, \ \ mv^2r = ke^2 $$</p><p>2 式除以 1 式可得：</p><p>$$\begin{aligned}<br>v &amp;= \frac{ke^2}{n\hbar} \Longrightarrow v^2 = \frac{k^2e^4}{n^2\hbar^2} \\<br>E_k &amp;= \frac{1}{2}mv^2 = \frac{mk^2e^4}{2n^2\hbar^2} \quad (k = \frac{1}{4\pi \epsilon_0}, \hbar = \frac{h}{2\pi}) \\<br>E_k &amp;= \frac{me^4}{8 n^2 \epsilon_0^2 h^2} \\<br>\end{aligned}$$</p>
+          </div>
+<div class="note info">
+            <p><strong>電子位能</strong></p><p>化簡聯立方程第 2 式：</p><p>$$ mv^2 = \frac{ke^2}{r} $$</p><p>接著由位能公式可得動能與位能的關係式：</p><p>$$ U = -\frac{ke^2}{r} = -mv^2 = -2E_k $$</p>
+          </div>
+<p>原子核—電子系統並無外力作用，故力學能守恆，而一個軌道的能量為：</p>
+<p>$$ E = E_k + U = -E_k = \frac{-me^4}{8 n^2 \epsilon_0^2 h^2} = -\frac{1}{n^2} \cdot \frac{me^4}{8 \epsilon_0^2 h^2} = -\frac{1}{n^2} E_0 $$</p>
+<p>$n$ 取多少就是第幾個能階，此結果完美吻合芮得柏公式。</p>
+<p>利用波爾模型計算芮得柏常數的話，會得到 $\displaystyle (R = \frac{E_0}{hc} \approx 1.097 \times 10^{7})$，有些許誤差，這是因為波爾的模型假設原子核靜止不動。實際上並非如此，用古典物理解釋的話原子核會和電子進行雙星運動，只是原子核運動幅度非常小（質量太大）。</p>
+<div class="note default">
+            <ol><li><p>軌道半徑 $r \propto n^2$，即 $r_n = n^2 r_0$。</p></li><li><p>軌道能量 $\displaystyle E \propto -\frac{1}{n^2}$，即 $E_n = -\frac{1}{n^2} E_0$。</p></li><li><p>兩能階能量差 $\displaystyle \Delta E = E_0 (\frac{1}{n_i^2} - \frac{1}{n_j^2})$，電子游離能 $\displaystyle = E_0(\frac{1}{n^2} - \frac{1}{\infty^2}) = \frac{E_0}{n^2}$。</p></li><li><p>基態軌道能量為 -13.56 eV。</p></li></ol>
+          </div>
+<h2 id="Franck-Hertz-實驗">Franck-Hertz 實驗</h2>
+<img src="/2023/02/23/physics/franck-hertz.jpg" width="100%">
+<h2 id="雷射">雷射</h2>
+<p>LASER = Light Amplification by Stimulated Emission or Radiation</p>
+<p>產生雷射的條件：</p>
+<ol>
+<li>Stimulated Emission</li>
+<li>Population Inversion (增加 Stimulated Emission 產生機會)</li>
+<li>Metastable State (防止 Spontaneous Emission)</li>
+</ol>
+<p>Stimulated Emission 特徵：</p>
+<ol>
+<li>Light Amplification</li>
+<li>同調、同向、同相</li>
+</ol>
+<p>雷射特徵：</p>
+<ol>
+<li>單向 (Unidirectional)</li>
+<li>高強度 (High Intensity)</li>
+<li>近似單色 (Nearly Monochromatic)</li>
+<li>同調 (Coherent)</li>
+</ol>
+<p>雷射可以分成固態雷射 (Ex. 紅寶石雷射)、氣態雷射 (Ex. 氦氖雷射)。現代的雷射多用半導體製成。</p>
+<p>雷射應用：光碟 (CD, DVD, BD)</p>
+<img src="/2023/02/23/physics/laser1.png" width="90%">
 <h1>Ch.19 量子力學的基本定理</h1>
+<h2 id="德布羅伊假設-De-Broglie-Hypothesis">德布羅伊假設 (De Broglie Hypothesis)</h2>
+<p>繼愛因斯坦提出光電效應，證實光具有粒子的特性後，德布羅伊於 1925 年提出粒子也同樣具有波動性質，稱為物質波。</p>
+<p>設 $p$ 為動量，$E$ 為能量，則物質波波長與頻率：</p>
+<p>$$ \lambda = \frac{h}{p}, \nu = \frac{E}{h} $$</p>
+<p>例：一顆 0.1kg，速度 1000 m/s 的子彈物質波波長 $\displaystyle \lambda = \frac{h}{p} = \frac{6.63 \times 10^{34}}{0.1 \times 10^3} = 6.63 \times 10^{36} (m) = 6.63 \times 10^{-26} (\mathring{A})$。</p>
+<p>要利用干涉或繞射觀察到物質波，物質波波長必須至少要有 $\mathring{A}$ 的量級，然而我們平常觀察不到是因為波長太小。</p>
+<h2 id="電子繞射實驗-Davisson-Germer-Experiment">電子繞射實驗 (Davisson-Germer Experiment)</h2>
+<p>此實驗證實了德布羅伊假設的正確性。</p>
+<p>仿照布拉格晶體繞射實驗，實驗分成兩階段。</p>
+<p>第一階段：將 X 光照射晶體，量測第一次出現繞射條紋時的晶格間距 $d$ 與反射偏轉角度 $\Phi$。</p>
+<img src="/2023/02/23/physics/e-diffraction1.png" width="30%">
+<p>測得 $\theta = 65°$，推得 $\Phi = 180° - 2\theta = 50°$。</p>
+<p>由公式 $n\lambda = 2d \sin \theta$ 代入 $n = 1, \lambda, \theta$ 得到 $d = 0.91 \mathring{A}$。</p>
+<p>第二階段：固定 $\Phi = 50°$ 並將 X 光換成電子槍，電子能量由電壓大小決定。調整電壓大小讓電子產生繞射條紋。</p>
+<img src="/2023/02/23/physics/e-diffraction2.png" width="90%">
+<p>由繞射公式：$\displaystyle \lambda_n = \frac{2d\sin\theta}{n} = \frac{1.67}{n} (\mathring{A})$</p>
+<p>利用德布羅伊假設，得到 $\displaystyle \lambda_n = \frac{h}{p} = \frac{h}{\sqrt{2mE_k}} = \frac{h}{\sqrt{2meV_n}}$。</p>
+<p>第一加速電壓為 54V，代入後解 $\lambda_1 = 1.67 \mathring{A}$，正好和 X 光波長相同！</p>
+<p>而因為 $\lambda_n \propto \frac{1}{n} \propto \frac{1}{\sqrt{V_n}} \Longrightarrow V_n \propto n^2$，故 $V_n = 54 n^2$。</p>
+<h2 id="電子干涉實驗與哥本哈根詮釋">電子干涉實驗與哥本哈根詮釋</h2>
+<p>電子在不被觀測的情況下，通過雙狹縫會隨機分布在屏幕上，分布情形與波干涉條紋相同。</p>
+<p><strong>哥本哈根詮釋</strong>：物質波的本質其實是粒子出現的機率波。以此為基礎，波函數的概念被引入，量子力學的大門正式開啟。</p>
+<h2 id="海森堡不確定性原理-Heisenberg-Uncertainty-Principle">海森堡不確定性原理 (Heisenberg Uncertainty Principle)</h2>
+<p>海森堡不確定性原理：一個物質的位置與動量無法被同時確定，其誤差乘積為定值。</p>
+<p>$$ \Delta p \cdot \Delta x \geq \hbar $$</p>
+<p>其中 $\Delta p, \Delta x$ 分別為動量與位置的不確定度（標準差）。其實更好的下界應該是 $\frac{\hbar}{2}$，是後來由 Earl Kennard 證明出來。</p>
+<img src="/2023/02/23/physics/uncertainty1.png" width="40%">
+<p>以電子單狹縫繞射實驗來解釋不確定性原理：電子進入單狹縫前，動量已經被確定 ($\Delta p = 0$)，但在縱向上電子皆有可能出現 ($\Delta x = \infty$)。</p>
+<p>而在通過狹縫後，$\Delta x \approx d$，$\Delta p &gt; p \sin \theta$，代入 $\displaystyle p = \frac{h}{\lambda}, \sin \theta = \frac{\lambda}{d} \approx \frac{\lambda}{\Delta x}$ 得到：</p>
+<p>$$ \Delta p &gt; p \sin \theta \approx \frac{h}{\lambda} \frac{\lambda}{\Delta x} = \frac{h}{\Delta x} \Longrightarrow \Delta p \cdot \Delta x &gt; h $$</p>
+<p>這只是大略的估算，但從繞射實驗中可以感覺得出來海森堡的不確定性原理。</p>
+<p>以波函數來解釋不確定性原理：座標空間和動量空間互為傅立葉變換。而傅立葉變換有個特點，以動量、位置為常態分布函數的粒子為例，如果峰值附近較「窄」則變換後的函數會較「平緩」，反之如果原函數較「平緩」則變換後的函數會較「窄」，兩者的不確定性恰好互補。</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/ans/362337625?source_id=1003">https://www.zhihu.com/tardis/zm/ans/362337625?source_id=1003</a></p>
+<img src="/2023/02/23/physics/uncertainty2.png" width="50%">
+<h2 id="波爾互補原則-Bohr-Principle-of-Complementary">波爾互補原則 (Bohr Principle of Complementary)</h2>
+<p>波動模型與粒子模型為互補。不存在任何一種量測方式可以同時顯現物質的波動性與粒子性。</p>
+<h1>Ch 19 + 20 波函數與薛丁格方程式</h1>
+<h2 id="波函數">波函數</h2>
+<p>// 施工中</p>
+<h2 id="薛丁格方程式">薛丁格方程式</h2>
+<p>// 施工中</p>
+<h1>Ch 21 量子力學應用於原子結構</h1>
+<p>// 施工中</p>
+<h1>Ch 22 鍵結與晶體結構</h1>
+<p>// 施工中</p>
 
     </div>
 
@@ -452,7 +559,7 @@ $$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Ch.17 The Beginning of Quantum Story</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blackbody-Radiation-%E9%BB%91%E9%AB%94%E8%BC%BB%E5%B0%84"><span class="nav-number">1.1.</span> <span class="nav-text">Blackbody Radiation (黑體輻射)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">普朗克的模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photoelectric-Effect-%E5%85%89%E9%9B%BB%E6%95%88%E6%87%89"><span class="nav-number">1.2.</span> <span class="nav-text">Photoelectric Effect (光電效應)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E5%AD%90%E5%8B%95%E9%87%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">光子動量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-ray-Production"><span class="nav-number">1.3.</span> <span class="nav-text">X-ray Production</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compton-Effect-%E5%BA%B7%E6%99%AE%E9%A0%93%E6%95%A3%E5%B0%84"><span class="nav-number">1.4.</span> <span class="nav-text">Compton Effect (康普頓散射)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Ch. 18 波爾的原子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B9%AF%E5%A7%86%E6%A3%AE%E8%A5%BF%E7%93%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">湯姆森西瓜模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%A1%9E%E7%A6%8F%E8%A1%8C%E6%98%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">拉塞福行星模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Ch.19 量子力學的基本定理</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Ch.17 The Beginning of Quantum Story</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blackbody-Radiation-%E9%BB%91%E9%AB%94%E8%BC%BB%E5%B0%84"><span class="nav-number">1.1.</span> <span class="nav-text">Blackbody Radiation (黑體輻射)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">普朗克的模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photoelectric-Effect-%E5%85%89%E9%9B%BB%E6%95%88%E6%87%89"><span class="nav-number">1.2.</span> <span class="nav-text">Photoelectric Effect (光電效應)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E5%AD%90%E5%8B%95%E9%87%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">光子動量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-ray-Production"><span class="nav-number">1.3.</span> <span class="nav-text">X-ray Production</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compton-Effect-%E5%BA%B7%E6%99%AE%E9%A0%93%E6%95%A3%E5%B0%84"><span class="nav-number">1.4.</span> <span class="nav-text">Compton Effect (康普頓散射)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Ch. 18 波爾的原子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B9%AF%E5%A7%86%E6%A3%AE%E8%A5%BF%E7%93%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">湯姆森西瓜模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%A1%9E%E7%A6%8F%E8%A1%8C%E6%98%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">拉塞福行星模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B0%AB%E5%8E%9F%E5%AD%90%E5%85%89%E8%AD%9C"><span class="nav-number">2.3.</span> <span class="nav-text">氫原子光譜</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E7%88%BE%E6%B0%AB%E5%8E%9F%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">波爾氫原子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Franck-Hertz-%E5%AF%A6%E9%A9%97"><span class="nav-number">2.5.</span> <span class="nav-text">Franck-Hertz 實驗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E5%B0%84"><span class="nav-number">2.6.</span> <span class="nav-text">雷射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Ch.19 量子力學的基本定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%B7%E5%B8%83%E7%BE%85%E4%BC%8A%E5%81%87%E8%A8%AD-De-Broglie-Hypothesis"><span class="nav-number">3.1.</span> <span class="nav-text">德布羅伊假設 (De Broglie Hypothesis)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%BB%E5%AD%90%E7%B9%9E%E5%B0%84%E5%AF%A6%E9%A9%97-Davisson-Germer-Experiment"><span class="nav-number">3.2.</span> <span class="nav-text">電子繞射實驗 (Davisson-Germer Experiment)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%BB%E5%AD%90%E5%B9%B2%E6%B6%89%E5%AF%A6%E9%A9%97%E8%88%87%E5%93%A5%E6%9C%AC%E5%93%88%E6%A0%B9%E8%A9%AE%E9%87%8B"><span class="nav-number">3.3.</span> <span class="nav-text">電子干涉實驗與哥本哈根詮釋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%A3%AE%E5%A0%A1%E4%B8%8D%E7%A2%BA%E5%AE%9A%E6%80%A7%E5%8E%9F%E7%90%86-Heisenberg-Uncertainty-Principle"><span class="nav-number">3.4.</span> <span class="nav-text">海森堡不確定性原理 (Heisenberg Uncertainty Principle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E7%88%BE%E4%BA%92%E8%A3%9C%E5%8E%9F%E5%89%87-Bohr-Principle-of-Complementary"><span class="nav-number">3.5.</span> <span class="nav-text">波爾互補原則 (Bohr Principle of Complementary)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">Ch 19 + 20 波函數與薛丁格方程式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B8"><span class="nav-number">4.1.</span> <span class="nav-text">波函數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%96%9B%E4%B8%81%E6%A0%BC%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">薛丁格方程式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">Ch 21 量子力學應用於原子結構</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">Ch 22 鍵結與晶體結構</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
