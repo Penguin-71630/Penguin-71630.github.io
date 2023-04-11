@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/photoelectric.png">
 <meta property="og:image" content="http://penguin-71630.github.io/2023/02/23/physics/xray.png">
 <meta property="article:published_time" content="2023-02-23T09:16:10.000Z">
-<meta property="article:modified_time" content="2023-02-23T12:38:16.101Z">
+<meta property="article:modified_time" content="2023-04-11T10:12:12.364Z">
 <meta property="article:author" content="Gino">
 <meta property="article:tag" content="course note">
 <meta name="twitter:card" content="summary">
@@ -215,10 +215,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023.02.23 17:16:10 / Modified: 20:38:16" itemprop="dateCreated datePublished" datetime="2023-02-23T17:16:10+08:00">2023.02.23</time>
+              <time title="Created: 2023.02.23 17:16:10" itemprop="dateCreated datePublished" datetime="2023-02-23T17:16:10+08:00">2023.02.23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023.04.11 18:12:12" itemprop="dateModified" datetime="2023-04-11T18:12:12+08:00">2023.04.11</time>
+              </span>
 
           
 
@@ -249,6 +255,7 @@
     font-weight: bold;
 }
 </style>
+<p>這篇是交大李威儀的普物 (二) 的課程筆記，第一次學量子力學想說概念頗多就隨手整理一下。寫得很隨興，大概只有前半寫比較認真寫。</p>
 <span id="more"></span>
 <!-- ------------------------------------------------------------- -->
 <blockquote>
@@ -284,7 +291,7 @@ $$</p>
 <p>$$<br>
 I(\nu, T) = \frac{2h\nu ^3}{c^2} \frac{1}{e^\frac{h\nu}{kT}-1}<br>
 $$</p>
-<p>這條公式不會考，我寫爽的。把所有頻率的電磁波輻射率套上面那條公式再積分起來會得到只和溫度相關的公式 (Stefan-Boltzmann Law)：</p>
+<p>這條公式不會考。把所有頻率的電磁波輻射率套上面那條公式再積分起來會得到只和溫度相關的公式 (Stefan-Boltzmann Law)：</p>
 <p>$$<br>
 I_T = \sigma T^4 \qquad \sigma = 5.67 \times 10^{-8}<br>
 $$</p>
@@ -352,6 +359,19 @@ $$</p>
 <li>康普頓效應重要應用：癌症的放射療法</li>
 <li>逆康普頓效應則可以解釋天體物理學的一些現象。</li>
 </ul>
+<h1>Ch. 18 波爾的原子模型</h1>
+<h2 id="湯姆森西瓜模型">湯姆森西瓜模型</h2>
+<p>1897 年，湯姆森整合了陰極射線的研究結果，提出陰極射線的組成為比原子更小的帶負電粒子，稱其為電子，而又透過陰極射線在電場與磁場的偏轉 (Lorentz Force)，測得電子的荷質比，獲得諾貝爾獎。</p>
+<p>湯姆森認為，電子在原子中的分布類似西瓜與西瓜籽的關係，帶正電的部分均勻分布，帶負電的電子鑲嵌在其中，稱為西瓜模型。</p>
+<h2 id="拉塞福行星模型">拉塞福行星模型</h2>
+<p>湯姆森的學生拉塞福在進行 $\alpha$ 粒子散射實驗時，發現 $\alpha$ 粒子約有 1/8000 的機率產生大角度散射 (大於 90 度)，證明了湯姆森的西瓜模型是錯誤的，並提出行星模型。</p>
+<div class="note danger">
+            <p>西瓜模型錯誤的點：把原子核質量均勻分布的話，每個區域的質量會比 $\alpha$ 粒子小非常多，當 $\alpha$ 粒子打上去的時候，由於質量差距懸殊，理論上會必定穿透，大角度散射機率遠小於 1/8000 (實際值約為 $1/10^{3500}$)，類似灑一團麵粉飄在空氣中，然後拿一顆球往那團麵粉砸。</p>
+          </div>
+<div class="note warning">
+            <p>行星模型：正電的部分是集中在原子中心，半徑約為 $10^{-5} \mathring{A}$，稱為原子核。電子以庫侖力為向心力繞核作圓周運動，是為行星模型。</p><p>用黃色框包住這個區域是因為行星模型也是錯誤的。</p>
+          </div>
+<h1>Ch.19 量子力學的基本定理</h1>
 
     </div>
 
@@ -432,7 +452,7 @@ $$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Ch.17 The Beginning of Quantum Story</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blackbody-Radiation-%E9%BB%91%E9%AB%94%E8%BC%BB%E5%B0%84"><span class="nav-number">1.1.</span> <span class="nav-text">Blackbody Radiation (黑體輻射)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">普朗克的模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photoelectric-Effect-%E5%85%89%E9%9B%BB%E6%95%88%E6%87%89"><span class="nav-number">1.2.</span> <span class="nav-text">Photoelectric Effect (光電效應)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E5%AD%90%E5%8B%95%E9%87%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">光子動量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-ray-Production"><span class="nav-number">1.3.</span> <span class="nav-text">X-ray Production</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compton-Effect-%E5%BA%B7%E6%99%AE%E9%A0%93%E6%95%A3%E5%B0%84"><span class="nav-number">1.4.</span> <span class="nav-text">Compton Effect (康普頓散射)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Ch.17 The Beginning of Quantum Story</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blackbody-Radiation-%E9%BB%91%E9%AB%94%E8%BC%BB%E5%B0%84"><span class="nav-number">1.1.</span> <span class="nav-text">Blackbody Radiation (黑體輻射)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">普朗克的模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photoelectric-Effect-%E5%85%89%E9%9B%BB%E6%95%88%E6%87%89"><span class="nav-number">1.2.</span> <span class="nav-text">Photoelectric Effect (光電效應)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E5%AD%90%E5%8B%95%E9%87%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">光子動量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-ray-Production"><span class="nav-number">1.3.</span> <span class="nav-text">X-ray Production</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compton-Effect-%E5%BA%B7%E6%99%AE%E9%A0%93%E6%95%A3%E5%B0%84"><span class="nav-number">1.4.</span> <span class="nav-text">Compton Effect (康普頓散射)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Ch. 18 波爾的原子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B9%AF%E5%A7%86%E6%A3%AE%E8%A5%BF%E7%93%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">湯姆森西瓜模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%A1%9E%E7%A6%8F%E8%A1%8C%E6%98%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">拉塞福行星模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Ch.19 量子力學的基本定理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
