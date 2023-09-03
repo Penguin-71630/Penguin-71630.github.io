@@ -1291,7 +1291,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c1ffbd;
+  background: #a41605;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2928,4 +2928,13 @@ body {
 }
 .comments {
   opacity: 0.9;
+}
+.images {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+.image {
+  float: left;
+  padding: 5px;
 }
